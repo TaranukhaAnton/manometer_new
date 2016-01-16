@@ -4,7 +4,7 @@ import org.apache.commons.lang.StringUtils;
 import org.hibernate.Criteria;
 import org.hibernate.Hibernate;
 import org.hibernate.SessionFactory;
-import org.hibernate.classic.Session;
+import org.hibernate.Session;
 import org.hibernate.criterion.Conjunction;
 import org.hibernate.criterion.Restrictions;
 import org.joda.time.DateTime;
@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import ua.com.manometer.model.Supplier;
 import ua.com.manometer.model.invoice.Invoice;
-import ua.com.manometer.model.invoice.InvoiceFilter;
+import ua.com.manometer.model.invoice.filter.InvoiceFilter;
 
 import java.math.BigInteger;
 import java.util.Date;

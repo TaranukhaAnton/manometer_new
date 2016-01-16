@@ -6,7 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 import ua.com.manometer.dao.BaseDAO;
 import ua.com.manometer.dao.invoice.BookingDAO;
 import ua.com.manometer.model.invoice.Booking;
-import ua.com.manometer.model.invoice.BookingFilter;
+import ua.com.manometer.model.invoice.filter.BookingFilter;
 
 import java.util.Date;
 import java.util.List;

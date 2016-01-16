@@ -312,7 +312,7 @@
                 numberFormat.setMaximumFractionDigits(2);
 
 
-                String[] url = {"co", "ao", "op"};
+                String[] url = {"co", "ao", "op","","","","","","","","smart"};
                 for (int i = 0; i < invoice.getInvoiceItems().size(); i++) {
                     InvoiceItem item = invoice.getInvoiceItems().get(i);
 
@@ -323,7 +323,7 @@
                 </TD>
                 <TD class="topAlign width415" align="left">
 
-                    <%if ((item.getType() < 3) && changesAllowed) {%>
+                    <%if (((item.getType() < 3)||(item.getType() == 10)) && changesAllowed) {%>
 
                     <a href="../invoice_item/add?invoice_id=<%=invoice.getId()%>&invoice_item_id=<%=item.getId()%>&type=<%=url[item.getType()]%> ">
                         <%= item.getName() %>
@@ -631,6 +631,8 @@
 <%-- content--%>
 
 <div id="addProduction-dialog" title="Добавить позицию">
+    <a href="../invoice_item/add?invoice_id=<%=invoice.getId()%>&type=smart">
+        датчик СМАРТ</a> <br>
     <a href="../invoice_item/add?invoice_id=<%=invoice.getId()%>&type=co">
         датчик ЦО</a> <br>
     <a href="../invoice_item/add?invoice_id=<%=invoice.getId()%>&type=ao">

@@ -42,7 +42,7 @@ public class Customer {
     private boolean applicationEngineering;
 
     private Integer nomList;
-    private boolean New;
+    private boolean actual;
     private Integer prospect;
 
 
@@ -156,10 +156,10 @@ public class Customer {
         return nomList;
     }
 
-    @Column(nullable = false, length = 1)
+    @Column(nullable = false, length = 1, name = "new")
     @Type(type = "yes_no")
-    public boolean isNew() {
-        return New;
+    public boolean isActual() {
+        return actual;
     }
 
 
@@ -313,8 +313,8 @@ public class Customer {
         this.nomList = nomList;
     }
 
-    public void setNew(boolean new1) {
-        New = new1;
+    public void setActual(boolean new1) {
+        actual = new1;
     }
 
     public void setProspect(Integer prospect) {

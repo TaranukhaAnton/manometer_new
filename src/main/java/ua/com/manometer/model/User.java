@@ -1,15 +1,14 @@
 package ua.com.manometer.model;
 
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.security.core.userdetails.UserDetails;
-import ua.com.manometer.model.invoice.InvoiceFilter;
+import ua.com.manometer.model.invoice.filter.BookingFilter;
+import ua.com.manometer.model.invoice.filter.InvoiceFilter;
 
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-
-
+@Table(name="user")
 public class User {
     public static String[] POWER_LEVELS = {"пользователь", "менеджер", "экономист", "администратор"};
     public static Integer LEVEL_USER = 1;
@@ -33,9 +32,16 @@ public class User {
     private Integer powersLevel; // уровень полномочий
     private String login; // логин
     private String pass;// пароль
+
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "invoice_filter_fk")
+    @PrimaryKeyJoinColumn
     private InvoiceFilter invoiceFilter;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
+    private BookingFilter bookingFilter;
+
+
     private String fioUkr;
 
     public InvoiceFilter getInvoiceFilter() {
@@ -94,9 +100,6 @@ public class User {
     public Integer getPowersLevel() {
         return powersLevel;
     }
-
-
-
 
     public String getLogin() {
         return login;
@@ -174,6 +177,14 @@ public class User {
 
     public void setFioUkr(String fioUkr) {
         this.fioUkr = fioUkr;
+    }
+
+    public BookingFilter getBookingFilter() {
+        return bookingFilter;
+    }
+
+    public void setBookingFilter(BookingFilter bookingFilter) {
+        this.bookingFilter = bookingFilter;
     }
 
     @Transient

@@ -30,9 +30,6 @@ public class OptionPriceController {
     @RequestMapping("/editOption")
     @ResponseBody
     public OptionsPrice edit(OptionsPrice optionsPrice) {
-       // System.out.println("OptionPriceController.edit");
-
-
         optionsPriceService.updateOptionsPrice(optionsPrice);
         return optionsPrice;
     }

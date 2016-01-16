@@ -1,5 +1,6 @@
 package ua.com.manometer.service.invoice;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,6 +15,7 @@ import ua.com.manometer.model.price.PriceFirstPart;
 import ua.com.manometer.service.price.OptionsPriceService;
 import ua.com.manometer.service.price.PriceFirstPartService;
 
+import javax.swing.*;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.List;
@@ -21,11 +23,11 @@ import java.util.List;
 @Service
 public class InvoiceItemServiceImpl implements InvoiceItemService {
 
-	@Autowired
-	private InvoiceItemDAO invoiceitemDAO;
+    @Autowired
+    private InvoiceItemDAO invoiceitemDAO;
 
     @Autowired
-	private PriceFirstPartService priceFirstPartService;
+    private PriceFirstPartService priceFirstPartService;
 
     @Autowired
     private OptionsPriceService optionsPriceService;
@@ -34,39 +36,55 @@ public class InvoiceItemServiceImpl implements InvoiceItemService {
     @Override
     @Transactional
     public InvoiceItem getInvoiceItem(Integer id) {
-        return   invoiceitemDAO.getInvoiceItem(id);
+        return invoiceitemDAO.getInvoiceItem(id);
     }
 
     @Override
-	@Transactional
-	public void saveInvoiceItem(InvoiceItem invoiceitem) {
-		invoiceitemDAO.saveInvoiceItem(invoiceitem);
-	}
+    @Transactional
+    public void saveInvoiceItem(InvoiceItem invoiceitem) {
+        invoiceitemDAO.saveInvoiceItem(invoiceitem);
+    }
 
-	@Override
-	@Transactional
-	public List<InvoiceItem> listInvoiceItem() {
-		return invoiceitemDAO.listInvoiceItem();
-	}
+    @Override
+    @Transactional
+    public List<InvoiceItem> listInvoiceItem() {
+        return invoiceitemDAO.listInvoiceItem();
+    }
 
-	@Override
-	@Transactional
-	public void removeInvoiceItem(Integer id) {
-		invoiceitemDAO.removeInvoiceItem(id);
-	}
-
+    @Override
+    @Transactional
+    public void removeInvoiceItem(Integer id) {
+        invoiceitemDAO.removeInvoiceItem(id);
+    }
 
 
     //todo
     @Override
 
-    public void setupMoneyFields(PressureSensor item ,BigDecimal koef ) {
-        PriceFirstPart priceFirstPart = priceFirstPartService.getItem(new IdPrice(new Integer(item.getModel()),item.getIsp(),item.getMat(),item.getKlim(), item.getError()));
+    public void setupMoneyFields(PressureSensor item, BigDecimal koef) {
+        PriceFirstPart priceFirstPart = priceFirstPartService.getItem(new IdPrice(new Integer(item.getModel()), item.getIsp(), item.getMat(), item.getKlim(), item.getError()));
 
         BigDecimal cost = priceFirstPart.getCost();
         BigDecimal price = priceFirstPart.getPrice();
 
-        Integer type = (item.getModel().charAt(0) == '3') ? 2 : (item.getModel().charAt(0) == '2') ? 1 : 0;
+//        Integer type = ( == '3') ? 2 : (item.getModel().charAt(0) == '2') ? 1 : 0;
+        Integer type = null;
+        switch (item.getModel().charAt(0)) {
+            case '3':
+                type = 2;
+                break;
+            case '2':
+                type = 1;
+                break;
+            case '5':
+                type = 0;
+                break;
+            case '7':
+                type = 3;
+                break;
+        }
+
+
         Integer isp = item.getIsp();
 
         OptionsPrice op = optionsPriceService.getOptionsPrice(type, isp, "ou" + item.getOutType());
@@ -91,7 +109,7 @@ public class InvoiceItemServiceImpl implements InvoiceItemService {
         }
         if (item.isI()) {
             op = optionsPriceService.getOptionsPrice(type, isp, "I");
-           // System.out.println("I " + op);
+            // System.out.println("I " + op);
             cost = cost.add(op.getCost());
             price = price.add(op.getPrice());
         }
@@ -115,8 +133,15 @@ public class InvoiceItemServiceImpl implements InvoiceItemService {
             cost = cost.add(op.getCost());
             price = price.add(op.getPrice());
         }
-        if (item.isR()) {
-            op = optionsPriceService.getOptionsPrice(type, isp, "R");
+//        if (item.isR()) {
+//            op = optionsPriceService.getOptionsPrice(type, isp, "R");
+//            cost = cost.add(op.getCost());
+//            price = price.add(op.getPrice());
+//        }
+
+        if (StringUtils.isNotBlank(item.getConnector())) {
+            op = optionsPriceService.getOptionsPrice(type, isp, item.getConnector());
+            System.out.println("Connector " + op);
             cost = cost.add(op.getCost());
             price = price.add(op.getPrice());
         }
@@ -127,7 +152,7 @@ public class InvoiceItemServiceImpl implements InvoiceItemService {
         item.setCost(cost.setScale(2, RoundingMode.HALF_UP));
         item.setPrice(price.setScale(2, RoundingMode.HALF_UP));
 
-        BigDecimal  p1 = price.divide(item.getInvoice().getExchangeRate(), 2, RoundingMode.HALF_UP).add(item.getAdditionalCost());
+        BigDecimal p1 = price.divide(item.getInvoice().getExchangeRate(), 2, RoundingMode.HALF_UP).add(item.getAdditionalCost());
         BigDecimal transportationCost = item.getTransportationCost();
         item.setSellingPrice(koef.multiply(p1).add(transportationCost).setScale(2, RoundingMode.HALF_UP));
     }

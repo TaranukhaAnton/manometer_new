@@ -46,86 +46,24 @@
     <td class="silver_b" >..71</td>
 </tr>
 <tr>
-    <td class="silver_r">50..</td>
+    <td class="silver_r">70..</td>
     <td  class="silver" >&nbsp;</td>
     <td  class="silver" >&nbsp;</td>
     <td  class="silver_r" >&nbsp;</td>
-    <td  class="silver " ><input type="checkbox" id="5020"/></td>
+    <td  class="silver " ><input type="checkbox" id="7020"/></td>
     <td  class="silver_r" >&nbsp;</td>
-    <td  class="silver " ><input type="checkbox" id="5030"/></td>
-    <td  class="silver" >&nbsp;</td>
-    <td  class="silver" >&nbsp;</td>
-    <td  class="silver_r" >&nbsp;</td>
-    <td  class="silver " ><input type="checkbox" id="5040"/></td>
-    <td  class="silver " ><input type="checkbox" id="5041"/></td>
-    <td  class="silver" >&nbsp;</td>
+    <td  class="silver " ><input type="checkbox" id="7030"/></td>
     <td  class="silver" >&nbsp;</td>
     <td  class="silver" >&nbsp;</td>
     <td  class="silver_r" >&nbsp;</td>
-    <td  class="silver " ><input type="checkbox" id="5050"/></td>
-    <td  class="silver " ><input type="checkbox" id="5051"/></td>
+    <td  class="silver " ><input type="checkbox" id="7040"/></td>
+    <td  class="silver " ><input type="checkbox" id="7041"/></td>
     <td  class="silver" >&nbsp;</td>
     <td  class="silver" >&nbsp;</td>
     <td  class="silver" >&nbsp;</td>
     <td  class="silver_r" >&nbsp;</td>
-    <td  class="silver" >&nbsp;</td>
-    <td  class="silver" >&nbsp;</td>
-    <td  class="silver" >&nbsp;</td>
-    <td  class="silver" >&nbsp;</td>
-    <td  class="silver_r" >&nbsp;</td>
-    <td  class="silver" >&nbsp;</td>
-    <td  class="silver" >&nbsp;</td>
-</tr>
-<tr>
-    <td class="silver_r">51..</td>
-    <td  class="silver " ><input type="checkbox" id="5101"/></td>
-    <td  class="silver " ><input type="checkbox" id="5110"/></td>
-    <td  class="silver_r " ><input type="checkbox" id="5115"/></td>
-    <td  class="silver " ><input type="checkbox" id="5120"/></td>
-    <td  class="silver_r" >&nbsp;</td>
-    <td  class="silver " ><input type="checkbox" id="5130"/></td>
-    <td  class="silver " ><input type="checkbox" id="5133"/></td>
-    <td  class="silver" >&nbsp;</td>
-    <td  class="silver_r " ><input type="checkbox" id="5135"/></td>
-    <td  class="silver " ><input type="checkbox" id="5140"/></td>
-    <td  class="silver " ><input type="checkbox" id="5141"/></td>
-    <td  class="silver " ><input type="checkbox" id="5142"/></td>
-    <td  class="silver " ><input type="checkbox" id="5143"/></td>
-    <td  class="silver" >&nbsp;</td>
-    <td  class="silver_r " ><input type="checkbox" id="5145"/></td>
-    <td  class="silver " ><input type="checkbox" id="5150"/></td>
-    <td  class="silver " ><input type="checkbox" id="5151"/></td>
-    <td  class="silver " ><input type="checkbox" id="5152"/></td>
-    <td  class="silver " ><input type="checkbox" id="5153"/></td>
-    <td  class="silver" >&nbsp;</td>
-    <td  class="silver_r " ><input type="checkbox" id="5155"/></td>
-    <td  class="silver " ><input type="checkbox" id="5160"/></td>
-    <td  class="silver " ><input type="checkbox" id="5161"/></td>
-    <td  class="silver " ><input type="checkbox" id="5162"/></td>
-    <td  class="silver " ><input type="checkbox" id="5163"/></td>
-    <td  class="silver_r" >&nbsp;</td>
-    <td  class="silver " ><input type="checkbox" id="5170"/></td>
-    <td  class="silver " ><input type="checkbox" id="5171"/></td>
-</tr>
-<tr>
-    <td class="silver_r">52..</td>
-    <td  class="silver " ><input type="checkbox" id="5201"/></td>
-    <td  class="silver " ><input type="checkbox" id="5210"/></td>
-    <td  class="silver_r " ><input type="checkbox" id="5215"/></td>
-    <td  class="silver " ><input type="checkbox" id="5220"/></td>
-    <td  class="silver_r" >&nbsp;</td>
-    <td  class="silver " ><input type="checkbox" id="5230"/></td>
-    <td  class="silver " ><input type="checkbox" id="5233"/></td>
-    <td  class="silver" >&nbsp;</td>
-    <td  class="silver_r " ><input type="checkbox" id="5235"/></td>
-    <td  class="silver " ><input type="checkbox" id="5240"/></td>
-    <td  class="silver " ><input type="checkbox" id="5241"/></td>
-    <td  class="silver " ><input type="checkbox" id="5242"/></td>
-    <td  class="silver " ><input type="checkbox" id="5243"/></td>
-    <td  class="silver" >&nbsp;</td>
-    <td  class="silver_r " ><input type="checkbox" id="5245"/></td>
-    <td  class="silver" >&nbsp;</td>
-    <td  class="silver" >&nbsp;</td>
+    <td  class="silver " ><input type="checkbox" id="7050"/></td>
+    <td  class="silver " ><input type="checkbox" id="7051"/></td>
     <td  class="silver" >&nbsp;</td>
     <td  class="silver" >&nbsp;</td>
     <td  class="silver" >&nbsp;</td>
@@ -139,28 +77,59 @@
     <td  class="silver" >&nbsp;</td>
 </tr>
 <tr>
-    <td class="silver_r">53..</td>
-    <td  class="silver " ><input type="checkbox" id="5301"/></td>
-    <td  class="silver " ><input type="checkbox" id="5310"/></td>
-    <td  class="silver_r " ><input type="checkbox" id="5315"/></td>
-    <td  class="silver " ><input type="checkbox" id="5320"/></td>
+    <td class="silver_r">71..</td>
+    <td  class="silver " ><input type="checkbox" id="7101"/></td>
+    <td  class="silver " ><input type="checkbox" id="7110"/></td>
+    <td  class="silver_r " ><input type="checkbox" id="7115"/></td>
+    <td  class="silver " ><input type="checkbox" id="7120"/></td>
     <td  class="silver_r" >&nbsp;</td>
-    <td  class="silver " ><input type="checkbox" id="5330"/></td>
-    <td  class="silver " ><input type="checkbox" id="5333"/></td>
+    <td  class="silver " ><input type="checkbox" id="7130"/></td>
+    <td  class="silver " ><input type="checkbox" id="7133"/></td>
     <td  class="silver" >&nbsp;</td>
-    <td  class="silver_r " ><input type="checkbox" id="5335"/></td>
-    <td  class="silver " ><input type="checkbox" id="5340"/></td>
-    <td  class="silver " ><input type="checkbox" id="5341"/></td>
-    <td  class="silver " ><input type="checkbox" id="5342"/></td>
-    <td  class="silver " ><input type="checkbox" id="5343"/></td>
+    <td  class="silver_r " ><input type="checkbox" id="7135"/></td>
+    <td  class="silver " ><input type="checkbox" id="7140"/></td>
+    <td  class="silver " ><input type="checkbox" id="7141"/></td>
+    <td  class="silver " ><input type="checkbox" id="7142"/></td>
+    <td  class="silver " ><input type="checkbox" id="7143"/></td>
     <td  class="silver" >&nbsp;</td>
-    <td  class="silver_r " ><input type="checkbox" id="5345"/></td>
-    <td  class="silver " ><input type="checkbox" id="5350"/></td>
-    <td  class="silver " ><input type="checkbox" id="5351"/></td>
-    <td  class="silver " ><input type="checkbox" id="5352"/></td>
-    <td  class="silver " ><input type="checkbox" id="5353"/></td>
+    <td  class="silver_r " ><input type="checkbox" id="7145"/></td>
+    <td  class="silver " ><input type="checkbox" id="7150"/></td>
+    <td  class="silver " ><input type="checkbox" id="7151"/></td>
+    <td  class="silver " ><input type="checkbox" id="7152"/></td>
+    <td  class="silver " ><input type="checkbox" id="7153"/></td>
     <td  class="silver" >&nbsp;</td>
-    <td  class="silver_r " ><input type="checkbox" id="5355"/></td>
+    <td  class="silver_r " ><input type="checkbox" id="7155"/></td>
+    <td  class="silver " ><input type="checkbox" id="7160"/></td>
+    <td  class="silver " ><input type="checkbox" id="7161"/></td>
+    <td  class="silver " ><input type="checkbox" id="7162"/></td>
+    <td  class="silver " ><input type="checkbox" id="7163"/></td>
+    <td  class="silver_r" >&nbsp;</td>
+    <td  class="silver " ><input type="checkbox" id="7170"/></td>
+    <td  class="silver " ><input type="checkbox" id="7171"/></td>
+</tr>
+<tr>
+    <td class="silver_r">72..</td>
+    <td  class="silver " ><input type="checkbox" id="7201"/></td>
+    <td  class="silver " ><input type="checkbox" id="7210"/></td>
+    <td  class="silver_r " ><input type="checkbox" id="7215"/></td>
+    <td  class="silver " ><input type="checkbox" id="7220"/></td>
+    <td  class="silver_r" >&nbsp;</td>
+    <td  class="silver " ><input type="checkbox" id="7230"/></td>
+    <td  class="silver " ><input type="checkbox" id="7233"/></td>
+    <td  class="silver" >&nbsp;</td>
+    <td  class="silver_r " ><input type="checkbox" id="7235"/></td>
+    <td  class="silver " ><input type="checkbox" id="7240"/></td>
+    <td  class="silver " ><input type="checkbox" id="7241"/></td>
+    <td  class="silver " ><input type="checkbox" id="7242"/></td>
+    <td  class="silver " ><input type="checkbox" id="7243"/></td>
+    <td  class="silver" >&nbsp;</td>
+    <td  class="silver_r " ><input type="checkbox" id="7245"/></td>
+    <td  class="silver" >&nbsp;</td>
+    <td  class="silver" >&nbsp;</td>
+    <td  class="silver" >&nbsp;</td>
+    <td  class="silver" >&nbsp;</td>
+    <td  class="silver" >&nbsp;</td>
+    <td  class="silver_r" >&nbsp;</td>
     <td  class="silver" >&nbsp;</td>
     <td  class="silver" >&nbsp;</td>
     <td  class="silver" >&nbsp;</td>
@@ -170,54 +139,85 @@
     <td  class="silver" >&nbsp;</td>
 </tr>
 <tr>
-    <td class="silver_r">54..</td>
-    <td  class="silver " ><input type="checkbox" id="5401"/></td>
-    <td  class="silver " ><input type="checkbox" id="5410"/></td>
-    <td  class="silver_r " ><input type="checkbox" id="5415"/></td>
-    <td  class="silver " ><input type="checkbox" id="5420"/></td>
-    <td  class="silver_r " ><input type="checkbox" id="5424"/></td>
-    <td  class="silver " ><input type="checkbox" id="5430"/></td>
-    <td  class="silver" >&nbsp;</td>
-    <td  class="silver " ><input type="checkbox" id="5434"/></td>
+    <td class="silver_r">73..</td>
+    <td  class="silver " ><input type="checkbox" id="7301"/></td>
+    <td  class="silver " ><input type="checkbox" id="7310"/></td>
+    <td  class="silver_r " ><input type="checkbox" id="7315"/></td>
+    <td  class="silver " ><input type="checkbox" id="7320"/></td>
     <td  class="silver_r" >&nbsp;</td>
-    <td  class="silver " ><input type="checkbox" id="5440"/></td>
+    <td  class="silver " ><input type="checkbox" id="7330"/></td>
+    <td  class="silver " ><input type="checkbox" id="7333"/></td>
+    <td  class="silver" >&nbsp;</td>
+    <td  class="silver_r " ><input type="checkbox" id="7335"/></td>
+    <td  class="silver " ><input type="checkbox" id="7340"/></td>
+    <td  class="silver " ><input type="checkbox" id="7341"/></td>
+    <td  class="silver " ><input type="checkbox" id="7342"/></td>
+    <td  class="silver " ><input type="checkbox" id="7343"/></td>
+    <td  class="silver" >&nbsp;</td>
+    <td  class="silver_r " ><input type="checkbox" id="7345"/></td>
+    <td  class="silver " ><input type="checkbox" id="7350"/></td>
+    <td  class="silver " ><input type="checkbox" id="7351"/></td>
+    <td  class="silver " ><input type="checkbox" id="7352"/></td>
+    <td  class="silver " ><input type="checkbox" id="7353"/></td>
+    <td  class="silver" >&nbsp;</td>
+    <td  class="silver_r " ><input type="checkbox" id="7355"/></td>
     <td  class="silver" >&nbsp;</td>
     <td  class="silver" >&nbsp;</td>
     <td  class="silver" >&nbsp;</td>
-    <td  class="silver " ><input type="checkbox" id="5444"/></td>
+    <td  class="silver" >&nbsp;</td>
     <td  class="silver_r" >&nbsp;</td>
-    <td  class="silver " ><input type="checkbox" id="5450"/></td>
-    <td  class="silver" >&nbsp;</td>
-    <td  class="silver" >&nbsp;</td>
-    <td  class="silver" >&nbsp;</td>
-    <td  class="silver " ><input type="checkbox" id="5454"/></td>
-    <td  class="silver_r" >&nbsp;</td>
-    <td  class="silver " ><input type="checkbox" id="5460"/></td>
-    <td  class="silver" >&nbsp;</td>
-    <td  class="silver" >&nbsp;</td>
-    <td  class="silver" >&nbsp;</td>
-    <td  class="silver_r " ><input type="checkbox" id="5464"/></td>
     <td  class="silver" >&nbsp;</td>
     <td  class="silver" >&nbsp;</td>
 </tr>
 <tr>
-    <td class="silver_r">55..</td>
+    <td class="silver_r">74..</td>
+    <td  class="silver " ><input type="checkbox" id="7401"/></td>
+    <td  class="silver " ><input type="checkbox" id="7410"/></td>
+    <td  class="silver_r " ><input type="checkbox" id="7415"/></td>
+    <td  class="silver " ><input type="checkbox" id="7420"/></td>
+    <td  class="silver_r " ><input type="checkbox" id="7424"/></td>
+    <td  class="silver " ><input type="checkbox" id="7430"/></td>
+    <td  class="silver" >&nbsp;</td>
+    <td  class="silver " ><input type="checkbox" id="7434"/></td>
+    <td  class="silver_r" >&nbsp;</td>
+    <td  class="silver " ><input type="checkbox" id="7440"/></td>
+    <td  class="silver" >&nbsp;</td>
+    <td  class="silver" >&nbsp;</td>
+    <td  class="silver" >&nbsp;</td>
+    <td  class="silver " ><input type="checkbox" id="7444"/></td>
+    <td  class="silver_r" >&nbsp;</td>
+    <td  class="silver " ><input type="checkbox" id="7450"/></td>
+    <td  class="silver" >&nbsp;</td>
+    <td  class="silver" >&nbsp;</td>
+    <td  class="silver" >&nbsp;</td>
+    <td  class="silver " ><input type="checkbox" id="7454"/></td>
+    <td  class="silver_r" >&nbsp;</td>
+    <td  class="silver " ><input type="checkbox" id="7460"/></td>
+    <td  class="silver" >&nbsp;</td>
+    <td  class="silver" >&nbsp;</td>
+    <td  class="silver" >&nbsp;</td>
+    <td  class="silver_r " ><input type="checkbox" id="7464"/></td>
+    <td  class="silver" >&nbsp;</td>
+    <td  class="silver" >&nbsp;</td>
+</tr>
+<tr>
+    <td class="silver_r">75..</td>
     <td  class="silver" >&nbsp;</td>
     <td  class="silver" >&nbsp;</td>
     <td  class="silver_r" >&nbsp;</td>
-    <td  class="silver " ><input type="checkbox" id="5520"/></td>
+    <td  class="silver " ><input type="checkbox" id="7520"/></td>
     <td  class="silver_r" >&nbsp;</td>
-    <td  class="silver " ><input type="checkbox" id="5530"/></td>
-    <td  class="silver" >&nbsp;</td>
-    <td  class="silver" >&nbsp;</td>
-    <td  class="silver_r" >&nbsp;</td>
-    <td  class="silver " ><input type="checkbox" id="5540"/></td>
-    <td  class="silver" >&nbsp;</td>
-    <td  class="silver" >&nbsp;</td>
+    <td  class="silver " ><input type="checkbox" id="7530"/></td>
     <td  class="silver" >&nbsp;</td>
     <td  class="silver" >&nbsp;</td>
     <td  class="silver_r" >&nbsp;</td>
-    <td  class="silver " ><input type="checkbox" id="5550"/></td>
+    <td  class="silver " ><input type="checkbox" id="7540"/></td>
+    <td  class="silver" >&nbsp;</td>
+    <td  class="silver" >&nbsp;</td>
+    <td  class="silver" >&nbsp;</td>
+    <td  class="silver" >&nbsp;</td>
+    <td  class="silver_r" >&nbsp;</td>
+    <td  class="silver " ><input type="checkbox" id="7550"/></td>
     <td  class="silver" >&nbsp;</td>
     <td  class="silver" >&nbsp;</td>
     <td  class="silver" >&nbsp;</td>
@@ -338,25 +338,25 @@
         </fieldset>
         <input type="button" id="okLimits" value="Применить" class="okbut"  style="margin-top: 60px;" onclick="setLimits();"/>
     </div>
-    <div class="height" id="ispolnenie">
-    <form name="isp">
-        <fieldset>
-            <legend>
-                Исполнения
-            </legend>
-            <input type="checkbox" id="isp01" value="0"> &nbsp; - общ <br/>
-            <input type="checkbox" id="isp02" value="1"> &nbsp; - Вн <br/>
-            <input type="checkbox" id="isp03" value="2"> &nbsp; - Ex <br/>
-            <input type="checkbox" id="isp04" value="3"> &nbsp; - AC <br/>
-            <input type="checkbox" id="isp05" value="4"> &nbsp; - K <br/>
+        <div class="height" id="ispolnenie">
+            <form name="isp">
+                <fieldset>
+                    <legend>
+                        Исполнения
+                    </legend>
+                    <input type="checkbox" id="isp01" value="0"> &nbsp; - общ <br/>
+                    <input type="checkbox" id="isp02" value="1"> &nbsp; - Вн <br/>
+                    <input type="checkbox" id="isp03" value="2"> &nbsp; - Ex <br/>
+                    <input type="checkbox" id="isp04" value="3"> &nbsp; - AC <br/>
+                    <input type="checkbox" id="isp05" value="4"> &nbsp; - K <br/>
 
-            <input type="button" id="okIspolnenie" value="Применить" class="okbut" onclick="setIsp();"/>
+                    <input type="button" id="okIspolnenie" value="Применить" class="okbut" onclick="setIsp();"/>
 
-        </fieldset>
-    </form>
-</div>
+                </fieldset>
+            </form>
+        </div>
     <div class="height" id="materials">
-    <form name="Mat">
+         <form name="Mat">
         <fieldset>
             <legend>
                 Материалы
@@ -372,14 +372,16 @@
 
         </fieldset>
     </form>
-</div>
+    </div>
 
     <div class="height" id="error">
-    <form name="err">
+         <form name="err">
         <fieldset>
             <legend>
                 Погрешность
             </legend>
+
+            <input type="checkbox" id="error005" value="0"> &nbsp; - 0,05 <br/>
             <input type="checkbox" id="error01" value="1"> &nbsp; - 0,1 <br/>
             <input type="checkbox" id="error015" value="2"> &nbsp; - 0,15 <br/>
             <input type="checkbox" id="error025" value="3"> &nbsp; - 0,25 <br/>
@@ -391,7 +393,7 @@
     </form>
 </div>
     <div class="height" id="stat">
-    <form name="st">
+          <form name="st">
         <fieldset>
             <legend>
                 Статика
@@ -414,7 +416,7 @@
     </form>
 </div>
     <div class="height" id="output">
-    <form name="ou">
+           <form name="ou">
         <fieldset>
             <legend>
                 Выходной сигнал
@@ -433,7 +435,7 @@
     </form>
 </div>
     <div class="height" id="DU">
-    <form name="du">
+           <form name="du">
         <fieldset>
             <legend>
                 ДУ
@@ -446,88 +448,88 @@
     </form>
 </div>
     <div class="height" id="KMCH">
-    <form>
+           <form>
         <fieldset>
             <legend>
                 КМЧ
             </legend>
             <table class="lim" border="0" cellspacing="0"   >
                 <tr>
-                    <td > <p align="center">1</p></td>
-                    <td > <p align="center">2</p></td>
-                    <td > <p align="center">3</p></td>
-                    <td > <p align="center">4</p></td>
-                    <td > <p align="center">5</p></td>
-                    <td > <p align="center">6</p></td>
-                    <td > <p align="center">7</p></td>
-                    <td > <p align="center">8</p></td>
-                    <td > <p align="center">9</p></td>
-                    <td > <p align="center">10</p></td>
-                    <td > <p align="center">11</p></td>
-                    <td > <p align="center">12</p></td>
-                    <td > <p align="center">13</p></td>
-                    <td > <p align="center">14</p></td>
-                    <td > <p align="center">15</p></td>
-                    <td > <p align="center">16</p></td>
-                    <td > <p align="center">17</p></td>
-                    <td > <p align="center">18</p></td>
-                    <td > <p align="center">19</p></td>
-                    <td > <p align="center">20</p></td>
-                    <td > <p align="center">21</p></td>
-                    <td > <p align="center">31</p></td>
-                    <td > <p align="center">32</p></td>
-                    <td > <p align="center">33</p></td>
-                    <td > <p align="center">34</p></td>
-                    <td > <p align="center">35</p></td>
-                    <td > <p align="center">36</p></td>
-                    <td > <p align="center">37</p></td>
-                    <td > <p align="center">38</p></td>
-                    <td > <p align="center">39</p></td>
-                    <td > <p align="center">40</p></td>
-                    <td > <p align="center">41</p></td>
-                    <td > <p align="center">42</p></td>
-                </tr>
+                <td > <p align="center">1</p></td>
+                <td > <p align="center">2</p></td>
+                <td > <p align="center">3</p></td>
+                <td > <p align="center">4</p></td>
+                <td > <p align="center">5</p></td>
+                <td > <p align="center">6</p></td>
+                <td > <p align="center">7</p></td>
+                <td > <p align="center">8</p></td>
+                <td > <p align="center">9</p></td>
+                <td > <p align="center">10</p></td>
+                <td > <p align="center">11</p></td>
+                <td > <p align="center">12</p></td>
+                <td > <p align="center">13</p></td>
+                <td > <p align="center">14</p></td>
+                <td > <p align="center">15</p></td>
+                <td > <p align="center">16</p></td>
+                <td > <p align="center">17</p></td>
+                <td > <p align="center">18</p></td>
+                <td > <p align="center">19</p></td>
+                <td > <p align="center">20</p></td>
+                <td > <p align="center">21</p></td>
+                <td > <p align="center">31</p></td>
+                <td > <p align="center">32</p></td>
+                <td > <p align="center">33</p></td>
+                <td > <p align="center">34</p></td>
+                <td > <p align="center">35</p></td>
+                <td > <p align="center">36</p></td>
+                <td > <p align="center">37</p></td>
+                <td > <p align="center">38</p></td>
+                <td > <p align="center">39</p></td>
+                <td > <p align="center">40</p></td>
+                <td > <p align="center">41</p></td>
+                <td > <p align="center">42</p></td>
+            </tr>
                 <tr><td ><input type="checkbox" id="kmch1" value=1 /></td>
-                    <td ><input type="checkbox" id="kmch2" value=2 /></td>
-                    <td ><input type="checkbox" id="kmch3" value=3 /></td>
-                    <td ><input type="checkbox" id="kmch4" value=4 /></td>
-                    <td ><input type="checkbox" id="kmch5" value=5 /></td>
-                    <td ><input type="checkbox" id="kmch6" value=6 /></td>
-                    <td ><input type="checkbox" id="kmch7" value=7 /></td>
-                    <td ><input type="checkbox" id="kmch8" value=8 /></td>
-                    <td ><input type="checkbox" id="kmch9" value=9 /></td>
-                    <td ><input type="checkbox" id="kmch10" value=10 /></td>
-                    <td ><input type="checkbox" id="kmch11" value=11 /></td>
-                    <td ><input type="checkbox" id="kmch12" value=12 /></td>
-                    <td ><input type="checkbox" id="kmch13" value=13 /></td>
-                    <td ><input type="checkbox" id="kmch14" value=14 /></td>
-                    <td ><input type="checkbox" id="kmch15" value=15 /></td>
-                    <td ><input type="checkbox" id="kmch16" value=16 /></td>
-                    <td ><input type="checkbox" id="kmch17" value=17 /></td>
-                    <td ><input type="checkbox" id="kmch18" value=18 /></td>
-                    <td ><input type="checkbox" id="kmch19" value=19 /></td>
-                    <td ><input type="checkbox" id="kmch20" value=20 /></td>
-                    <td ><input type="checkbox" id="kmch21" value=21 /></td>
-                    <td ><input type="checkbox" id="kmch31" value=31 /></td>
-                    <td ><input type="checkbox" id="kmch32" value=32 /></td>
-                    <td ><input type="checkbox" id="kmch33" value=33 /></td>
-                    <td ><input type="checkbox" id="kmch34" value=34 /></td>
-                    <td ><input type="checkbox" id="kmch35" value=35 /></td>
-                    <td ><input type="checkbox" id="kmch36" value=36 /></td>
-                    <td ><input type="checkbox" id="kmch37" value=37 /></td>
-                    <td ><input type="checkbox" id="kmch38" value=38 /></td>
-                    <td ><input type="checkbox" id="kmch39" value=39 /></td>
-                    <td ><input type="checkbox" id="kmch40" value=40 /></td>
-                    <td ><input type="checkbox" id="kmch41" value=41 /></td>
-                    <td ><input type="checkbox" id="kmch42" value=42 /></td>
+                <td ><input type="checkbox" id="kmch2" value=2 /></td>
+                <td ><input type="checkbox" id="kmch3" value=3 /></td>
+                <td ><input type="checkbox" id="kmch4" value=4 /></td>
+                <td ><input type="checkbox" id="kmch5" value=5 /></td>
+                <td ><input type="checkbox" id="kmch6" value=6 /></td>
+                <td ><input type="checkbox" id="kmch7" value=7 /></td>
+                <td ><input type="checkbox" id="kmch8" value=8 /></td>
+                <td ><input type="checkbox" id="kmch9" value=9 /></td>
+                <td ><input type="checkbox" id="kmch10" value=10 /></td>
+                <td ><input type="checkbox" id="kmch11" value=11 /></td>
+                <td ><input type="checkbox" id="kmch12" value=12 /></td>
+                <td ><input type="checkbox" id="kmch13" value=13 /></td>
+                <td ><input type="checkbox" id="kmch14" value=14 /></td>
+                <td ><input type="checkbox" id="kmch15" value=15 /></td>
+                <td ><input type="checkbox" id="kmch16" value=16 /></td>
+                <td ><input type="checkbox" id="kmch17" value=17 /></td>
+                <td ><input type="checkbox" id="kmch18" value=18 /></td>
+                <td ><input type="checkbox" id="kmch19" value=19 /></td>
+                <td ><input type="checkbox" id="kmch20" value=20 /></td>
+                <td ><input type="checkbox" id="kmch21" value=21 /></td>
+                <td ><input type="checkbox" id="kmch31" value=31 /></td>
+                <td ><input type="checkbox" id="kmch32" value=32 /></td>
+                <td ><input type="checkbox" id="kmch33" value=33 /></td>
+                <td ><input type="checkbox" id="kmch34" value=34 /></td>
+                <td ><input type="checkbox" id="kmch35" value=35 /></td>
+                <td ><input type="checkbox" id="kmch36" value=36 /></td>
+                <td ><input type="checkbox" id="kmch37" value=37 /></td>
+                <td ><input type="checkbox" id="kmch38" value=38 /></td>
+                <td ><input type="checkbox" id="kmch39" value=39 /></td>
+                <td ><input type="checkbox" id="kmch40" value=40 /></td>
+                <td ><input type="checkbox" id="kmch41" value=41 /></td>
+                <td ><input type="checkbox" id="kmch42" value=42 /></td>
 
-                </tr></table>
+            </tr></table>
             <input type="button" id="okKMCH" value="Применить" class="okbut" onclick="setKMCH();"/>
         </fieldset>
     </form>
 </div>
     <div class="height" id="VM">
-    <form name="VmForm">
+         <form name="VmForm">
         <fieldset>
             <legend>
                 ВМ

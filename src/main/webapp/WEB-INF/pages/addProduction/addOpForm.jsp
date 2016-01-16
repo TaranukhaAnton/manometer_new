@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 
 <link href="../css/addPressureSensor.css" rel="stylesheet" type="text/css"/>
-<script src="../js/local/add/addCo.js" type="text/javascript"></script>
+<script src="../js/local/add/addPressureSensor.js" type="text/javascript"></script>
 
 <form action="add_pressure_sensor" name="mainForm" onsubmit="return  validate();">
     <div id="parent">

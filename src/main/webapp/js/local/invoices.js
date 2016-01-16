@@ -173,17 +173,23 @@ $(function () {
         buttons: {
             'Применить': function () {
 
-                var arrayValues = ["users", "purposeFilter", "stateFilter", "currencyFilter"];
-                var data = $("#filterForm").serializeObject(arrayValues);
+                //var arrayValues = ["users", "purposeFilter", "stateFilter", "currencyFilter"];
+                //var data = $("#filterForm").serializeObject(arrayValues);
 //                data.onlyByEmployer = $('#onlyByEmployer')[0].checked;
 
 
-                var value = JSON.stringify(data);
+                //var value = JSON.stringify(data);
 
-                $.cookie("invoice_filter", value);
-                //alert(JSON.stringify($('#filterForm').serializeArray()))
-//                location.replace("../filters/save_filter?" + $('#filterForm').serialize());
-                location.reload();
+                //$.cookie("invoice_filter", value);
+                //var message = JSON.stringify($('#filterForm').serializeArray());
+                //alert(message);
+                //$("#myForm :input[value!='']").serialize()
+
+                var serialize = $("#filterForm :input[value!='']").serialize();
+                //console.log(serialize);
+                //alert(serialize);
+                location.replace("../filters/invoice/save_filter?" + serialize);
+//                location.reload();
             },
             'Очистить': function () {
                 $.removeCookie("invoice_filter");
@@ -206,14 +212,22 @@ $(function () {
 
 });
 function openFilterWindow() {
-    var cookie = $.cookie("invoice_filter");
-    if (cookie) {
-        var data = jQuery.parseJSON(cookie);
-        if (typeof data != 'undefined') {
+    //var cookie = $.cookie("invoice_filter");
+    //if (cookie) {
+    //    var data = jQuery.parseJSON(cookie);
+    //    if (typeof data != 'undefined') {
+    //        $('#filterForm').deserialize(data);
+    //    }
+    //}
+
+
+    $.get("../filters/invoice/get_filter", {},
+        function (data) {
             $('#filterForm').deserialize(data);
-        }
-    }
-    $('#filter-form').dialog('open');
+            $('#filter-form').dialog('open');
+        });
+
+
 }
 
 function removeErrorClass() {

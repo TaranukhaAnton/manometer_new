@@ -1,13 +1,11 @@
 package ua.com.manometer.dao;
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.classic.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import ua.com.manometer.model.User;
 
 import java.io.Serializable;
-import java.util.List;
 
 @Repository
 public class BaseDAOImpl implements BaseDAO {

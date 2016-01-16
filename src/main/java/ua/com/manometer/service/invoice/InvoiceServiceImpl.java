@@ -5,12 +5,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ua.com.manometer.dao.invoice.InvoiceDAO;
 import ua.com.manometer.model.invoice.*;
+import ua.com.manometer.model.invoice.filter.InvoiceFilter;
 import ua.com.manometer.util.InvoiceUtils;
 
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
-import java.util.Set;
 
 @Service
 public class InvoiceServiceImpl implements InvoiceService {
@@ -114,6 +114,7 @@ public class InvoiceServiceImpl implements InvoiceService {
                 case 1:
                 case 2:
                 case 3:
+                case 10:
                     t0 += ii.getQuantity();
                     break;
                 case 4:

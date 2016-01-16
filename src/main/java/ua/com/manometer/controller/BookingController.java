@@ -6,10 +6,14 @@ import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
+import ua.com.manometer.model.SecuredUser;
 import ua.com.manometer.model.invoice.*;
+import ua.com.manometer.model.invoice.filter.BookingFilter;
+import ua.com.manometer.model.invoice.filter.InvoiceFilter;
 import ua.com.manometer.service.CustomerService;
 import ua.com.manometer.service.address.CityService;
 import ua.com.manometer.service.invoice.BookingService;
@@ -48,26 +52,30 @@ public class BookingController {
     @RequestMapping("/")
     public String populateBookings(@CookieValue(required = false) String booking_filter, Map<String, Object> map) {
 
-        BookingFilter filter = null;
-        if (StringUtils.isNotBlank(booking_filter)) {
-            try {
-                ObjectMapper objectMapper = new ObjectMapper();
-                objectMapper.setDateFormat(new SimpleDateFormat("dd.MM.yyyy"));
-                filter = objectMapper.readValue(booking_filter, BookingFilter.class);
 
-            } catch (IOException e) {
-                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-                LOGGER.error(e);
-            }
+        SecuredUser securedUser = (SecuredUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        BookingFilter filter = securedUser.getBookingFilter();
 
-        }
+//        BookingFilter filter = null;
+//        if (StringUtils.isNotBlank(booking_filter)) {
+//            try {
+//                ObjectMapper objectMapper = new ObjectMapper();
+//                objectMapper.setDateFormat(new SimpleDateFormat("dd.MM.yyyy"));
+//                filter = objectMapper.readValue(booking_filter, BookingFilter.class);
+//
+//            } catch (IOException e) {
+//                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+//                LOGGER.error(e);
+//            }
+//
+//        }
 
-        if (filter != null) {
-            map.put("listBookings", bookingService.listFilteredBooking(filter));
-        } else {
-
-            map.put("listBookings", bookingService.listBooking());
-        }
+//        if (filter != null) {
+        map.put("listBookings", bookingService.listFilteredBooking(filter));
+//        } else {
+//
+//            map.put("listBookings", bookingService.listBooking());
+//        }
         return "bookings";
     }
 

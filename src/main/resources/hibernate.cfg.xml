@@ -19,7 +19,8 @@
 		<mapping class="ua.com.manometer.model.address.City" />
 		<mapping class="ua.com.manometer.model.address.Country" />
 <!---->
-        <mapping class="ua.com.manometer.model.invoice.InvoiceFilter" />
+        <mapping class="ua.com.manometer.model.invoice.filter.InvoiceFilter" />
+        <mapping class="ua.com.manometer.model.invoice.filter.BookingFilter" />
         <mapping class="ua.com.manometer.model.invoice.Invoice" />
         <mapping class="ua.com.manometer.model.invoice.Booking" />
         <mapping class="ua.com.manometer.model.invoice.Shipment" />

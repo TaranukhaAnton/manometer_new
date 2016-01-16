@@ -40,6 +40,11 @@ public class CompatibilityTableController {
         return "redactOp";
     }
 
+    @RequestMapping("/smart")
+    public String smartForward() {
+        return "redactSmart";
+    }
+
     @RequestMapping("/compatibilityTable")
     public String compatibilityTable(ModelMap model) {
         model.put("models", modelDescriptionService.listModelDescription());
@@ -128,9 +133,9 @@ public class CompatibilityTableController {
 
     List<Integer> toIntList(String value) {
         LinkedList<Integer> result = new LinkedList<Integer>();
-        StringTokenizer tokenizer = new StringTokenizer(value,"|");
-        for (; tokenizer.hasMoreTokens();)
-            result.add( new Integer(tokenizer.nextToken()));
+        StringTokenizer tokenizer = new StringTokenizer(value, "|");
+        for (; tokenizer.hasMoreTokens(); )
+            result.add(new Integer(tokenizer.nextToken()));
         return result;
     }
 
@@ -152,6 +157,13 @@ public class CompatibilityTableController {
     public ModelDescription getModelDescription(@RequestParam("model") Integer model) {
         ModelDescription modelDescription = modelDescriptionService.getModelDescription(model);
         return modelDescription;
+    }
+
+    @RequestMapping("/get_all_md")
+    @ResponseBody
+    public List<ModelDescription> getAllModelDescriptions() {
+        List<ModelDescription> modelDescriptions = modelDescriptionService.listModelDescription();
+        return modelDescriptions;
     }
 
 

@@ -302,24 +302,7 @@
                            value="<%=(new SimpleDateFormat("dd.MM.yyyy")).format(InvoiceItem.dateBeforeNDays(booking.getDate(),invoice.getInvoiceItems().get(i).getDeliveryTime()))%>"
                            onkeypressEn="true" readonly="true"
                            id="<%= invoice.getInvoiceItems().get(i).getId() %>_date"
-                    <%--onkeydown="invoiceItemChange('quantity',<%= invoice.getInvoiceItems().get(i).getId() %>,'dig',<%= invoice.getId()%>);"--%>
                             />
-
-
-                    <%--<%=(new SimpleDateFormat("dd.MM.yyyy")).format(booking.getDate())%>--%>
-                    <%--<%--%>
-
-                    <%--Date date = booking.getDate();--%>
-                    <%--int deliveryTime        =invoice.getInvoiceItems().get(i).getDeliveryTime();--%>
-                    <%--out.print(date);--%>
-                    <%--out.print(deliveryTime);--%>
-
-                    <%--try{--%>
-                    <%--InvoiceItem.dateBeforeNDays(date,deliveryTime);--%>
-                    <%--}catch (Exception e){e.printStackTrace();}// out.print(s);--%>
-                    <%--%>--%>
-
-
                 </TD>
                 <TD class="width90 topAlign">
 

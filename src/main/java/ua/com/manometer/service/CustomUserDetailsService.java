@@ -9,30 +9,33 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import ua.com.manometer.dao.UserDAO;
 import ua.com.manometer.model.SecuredUser;
 import ua.com.manometer.model.User;
-import ua.com.manometer.model.invoice.InvoiceFilter;
+import ua.com.manometer.model.invoice.filter.BookingFilter;
+import ua.com.manometer.model.invoice.filter.InvoiceFilter;
 
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
-@Service
-@Transactional(readOnly = true)
+@Service("customUserDetailsService")
 public class CustomUserDetailsService implements UserDetailsService {
 
+    public CustomUserDetailsService() {
+        System.out.println("CustomUserDetailsService.CustomUserDetailsService");
+    }
+
     @Autowired
-    private UserService userService;
+    private UserDAO userDAO;
 
-
+    @Transactional
     public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
 
 
         try {
-            User user = userService.findByLogin(login);
-
+            User user = userDAO.findByLogin(login);
 
 
             boolean enabled = true;
@@ -51,19 +54,24 @@ public class CustomUserDetailsService implements UserDetailsService {
                     getAuthorities(powersLevel));
             securedUser.setUserId(user.getId());
             InvoiceFilter invoiceFilter = user.getInvoiceFilter();
+            BookingFilter bookingFilter = user.getBookingFilter();
+
+
             if (User.LEVEL_MANAGER.equals(powersLevel) || User.LEVEL_USER.equals(powersLevel)) {
                 LinkedList<Integer> userFilter = new LinkedList<Integer>();
                 userFilter.add(user.getId());
                 invoiceFilter.setUsers(userFilter);
             }
-
-
-            securedUser.setFilter(invoiceFilter);
+//
+//
+            securedUser.setInvoiceFilter(invoiceFilter);
+            securedUser.setBookingFilter(bookingFilter);
             securedUser.setPowerLevel(powersLevel);
             return securedUser;
 
         } catch (Exception e) {
-            throw new UsernameNotFoundException("User not found");
+            e.printStackTrace();
+            throw new UsernameNotFoundException("User [" + login + "] not found");
         }
     }
 

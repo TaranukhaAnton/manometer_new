@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 @Entity
-@DiscriminatorValue("ProductionPrice")
+//@DiscriminatorValue("ProductionPrice")
 @Table(name="production")
 public class Production extends InvoiceItem {
     String name;

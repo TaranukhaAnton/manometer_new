@@ -1,26 +1,55 @@
-package ua.com.manometer.model.invoice;
+package ua.com.manometer.model.invoice.filter;
 
-import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * User: anton
  * Date: 13.11.14
  */
-public class BookingFilter {
+
+@Entity
+@Table(name = "booking_filter")
+public class BookingFilter implements Serializable {
+
+    @Id
+    @Column(name = "id")
+    Integer id;
+
+    @Transient
     String employer;
+
+    @Column(name = "F1")
     Integer f1 = 0;
+
+    @Column(name = "F2")
     Integer f2 = 0;
 
+    @Column(name = "F1FROM")
     Integer f1From;
+
+    @Column(name = "F1TO")
     Integer f1To;
 
-    @DateTimeFormat(pattern="dd.MM.yyyy")
+
+    @Column(name = "F2FROM")
     Date f2From;
-    @DateTimeFormat(pattern="dd.MM.yyyy")
+
+
+    @Column(name = "F2TO")
     Date f2To;
 
+
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getEmployer() {
         return employer;

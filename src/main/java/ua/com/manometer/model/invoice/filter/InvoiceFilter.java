@@ -1,10 +1,10 @@
-package ua.com.manometer.model.invoice;
+package ua.com.manometer.model.invoice.filter;
 
 
-import org.codehaus.jackson.map.annotate.JsonSerialize;
+//import org.codehaus.jackson.map.annotate.JsonSerialize;
 import org.hibernate.annotations.Type;
 import org.springframework.format.annotation.DateTimeFormat;
-import ua.com.manometer.util.CustomDateSerializer;
+//import ua.com.manometer.util.CustomDateSerializer;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -15,7 +15,7 @@ import java.util.*;
 @Table(name="invoice_filter")
 public class InvoiceFilter  implements Serializable {
     @Id
-    @GeneratedValue()
+    @Column(name = "id")
     private Integer id;
 
     Integer f0 = 0;
@@ -28,9 +28,9 @@ public class InvoiceFilter  implements Serializable {
     @Transient
     String employer;
 
-    @DateTimeFormat(pattern="dd.MM.yyyy")
+//    @DateTimeFormat(pattern="dd.MM.yyyy")
     Date f2From;
-    @DateTimeFormat(pattern="dd.MM.yyyy")
+//    @DateTimeFormat(pattern="dd.MM.yyyy")
     Date f2To;
 
     @Type(type = "ua.com.manometer.util.IntegerListCustomType")
@@ -47,6 +47,13 @@ public class InvoiceFilter  implements Serializable {
 
     @Transient
     boolean  onlyByEmployer;
+
+    public InvoiceFilter(Integer id) {
+        this.id = id;
+    }
+
+    public InvoiceFilter() {
+    }
 
     public List<Integer> getCurrencyFilter() {
         return currencyFilter;
@@ -129,7 +136,7 @@ public class InvoiceFilter  implements Serializable {
     }
 
 
-    @JsonSerialize(using = CustomDateSerializer.class)
+//    @JsonSerialize(using = CustomDateSerializer.class)
     public Date getF2From() {
         return f2From;
     }
@@ -138,7 +145,7 @@ public class InvoiceFilter  implements Serializable {
         this.f2From = f2From;
     }
 
-    @JsonSerialize(using = CustomDateSerializer.class)
+//    @JsonSerialize(using = CustomDateSerializer.class)
     public Date getF2To() {
         return f2To;
     }

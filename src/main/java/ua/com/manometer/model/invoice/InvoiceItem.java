@@ -11,7 +11,7 @@ import java.util.*;
 
 
 @Inheritance(strategy = InheritanceType.JOINED)
-@DiscriminatorColumn(name = "TYPE", discriminatorType = DiscriminatorType.STRING)
+//@DiscriminatorColumn(name = "TYPE", discriminatorType = DiscriminatorType.INTEGER)
 
 @Table(name = "invoice_item")
 public abstract class InvoiceItem {

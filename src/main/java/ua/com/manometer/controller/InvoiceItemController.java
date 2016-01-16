@@ -69,8 +69,8 @@ public class InvoiceItemController {
     @RequestMapping(value = "/add_list", method = RequestMethod.POST)
     public String addListExt(@RequestParam("invoice_id") Integer invoice_id,
                              @RequestParam("type") Integer type,
-                             HttpServletRequest request)     throws Exception {
-      //  printProps(request);
+                             HttpServletRequest request) throws Exception {
+        //  printProps(request);
         Invoice invoice = invoiceService.getInvoice(invoice_id);
         String productionId = request.getParameter("production_id");
         BigDecimal cost;
@@ -92,7 +92,6 @@ public class InvoiceItemController {
         }
 
 
-
         Production production = new Production();
         production.setName(name);
         production.setCost(cost.setScale(2, RoundingMode.HALF_UP));
@@ -112,7 +111,6 @@ public class InvoiceItemController {
             item.setType(type);
             productionPriceService.addProductionPrice(item);
         }
-
 
 
         invoice.addInvoiceItems(production);
@@ -169,7 +167,17 @@ public class InvoiceItemController {
         pressureSensor.setIsp(new Integer(request.getParameter("isp")));
         pressureSensor.setModel(request.getParameter("model"));
         String model = request.getParameter("model");
-        pressureSensor.setType((model.charAt(0) == '5') ? 0 : (model.charAt(0) == '2') ? 1 : 2);
+
+        if ((model.charAt(0) == '5')) {
+            pressureSensor.setType(0);
+        } else if ((model.charAt(0) == '2')) {
+            pressureSensor.setType(1);
+        } else if ((model.charAt(0) == '3')) {
+            pressureSensor.setType(2);
+        } else if ((model.charAt(0) == '7')) {
+            pressureSensor.setType(10);
+        }
+//        pressureSensor.setType( ? 0 : (model.charAt(0) == '2') ? 1 : 2);
 
         pressureSensor.setP(request.getParameter("p") != null);
         pressureSensor.setVM(request.getParameter("vm") != null);
@@ -197,6 +205,7 @@ public class InvoiceItemController {
         pressureSensor.setPI(request.getParameter("pi") != null);
         pressureSensor.setTU(request.getParameter("tu") != null);
         pressureSensor.setAfterSpec(request.getParameter("afterSpec"));
+        pressureSensor.setConnector(request.getParameter("connector"));
 
 
 //            if (invoiceId != null) {
@@ -271,7 +280,10 @@ public class InvoiceItemController {
         map.put("isp", pressureSensor.getIsp());
         map.put("stat", pressureSensor.getStat());
         map.put("i", pressureSensor.isI());
-        map.put("r", pressureSensor.isR());
+//        map.put("r", pressureSensor.isR());
+        if (pressureSensor.getConnector() != null) {
+            map.put("connector", pressureSensor.getConnector());
+        }
         map.put("PI", pressureSensor.isPI());
         map.put("p", pressureSensor.isP());
         map.put("TU", pressureSensor.isTU());

@@ -12,8 +12,8 @@ import org.hibernate.HibernateException;
 import org.hibernate.usertype.UserType;
 
 
-public class MyBigDecimalType implements UserType {
-    public int[] sqlTypes() {
+public class MyBigDecimalType  { //implements UserType
+  /*  public int[] sqlTypes() {
         int[] typeList = {Types.VARCHAR};
         return typeList;
     }
@@ -77,7 +77,7 @@ public class MyBigDecimalType implements UserType {
 
     public Serializable disassemble(Object value) throws HibernateException {
         return (Serializable) value;
-    }
+    }*/
 
 
 }

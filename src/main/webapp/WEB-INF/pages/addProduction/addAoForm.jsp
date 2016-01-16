@@ -1,7 +1,7 @@
 
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <link href="../css/addPressureSensor.css" rel="stylesheet" type="text/css"/>
-<script src="../js/local/add/addCo.js" type="text/javascript"></script>
+<script src="../js/local/add/addPressureSensor.js" type="text/javascript"></script>
 
 
 
@@ -288,7 +288,15 @@
                                 <td class="col3"><select name="kmch" id="kmch" style="width:60px;"></select></td>
                                 <td class="col3"><input type="checkbox" name="p" id="p"></td>
                                 <td class="col3"><input type="checkbox" name="him" id="him"></td>
-                                <td class="col3"><input type="checkbox" name="r" id="r"></td>
+                                <td class="col3">
+                                    <select name="connector" id="connector">
+                                        <option value=""></option>
+                                        <option value="connector1">- Р</option>
+                                        <option value="connector2">- РГ</option>
+                                        <option value="connector3">- РТ</option>
+                                        <option value="connector4">- PD</option>
+                                    </select>
+                                </td>
 
 
                             </tr>

@@ -307,11 +307,11 @@
                     <legend>
                         Погрешность
                     </legend>
-                    <input type="checkbox" id="error01" value="0"> &nbsp; - 0,1 <br/>
-                    <input type="checkbox" id="error015" value="1"> &nbsp; - 0,15 <br/>
-                    <input type="checkbox" id="error025" value="2"> &nbsp; - 0,25 <br/>
-                    <input type="checkbox" id="error05" value="3"> &nbsp; - 0,5 <br/>
-                    <input type="checkbox" id="error10" value="4"> &nbsp; - 1,0 <br/>
+                    <input type="checkbox" id="error01" value="1"> &nbsp; - 0,1 <br/>
+                    <input type="checkbox" id="error015" value="2"> &nbsp; - 0,15 <br/>
+                    <input type="checkbox" id="error025" value="3"> &nbsp; - 0,25 <br/>
+                    <input type="checkbox" id="error05" value="4"> &nbsp; - 0,5 <br/>
+                    <input type="checkbox" id="error10" value="5"> &nbsp; - 1,0 <br/>
                     <input type="button" id="okError" value="Применить" class="okbut" onclick="setErr();"/>
 
                 </fieldset>

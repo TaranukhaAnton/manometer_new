@@ -4,7 +4,8 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.SpringSecurityCoreVersion;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.util.Assert;
-import ua.com.manometer.model.invoice.InvoiceFilter;
+import ua.com.manometer.model.invoice.filter.BookingFilter;
+import ua.com.manometer.model.invoice.filter.InvoiceFilter;
 
 import java.io.Serializable;
 import java.util.*;
@@ -21,7 +22,8 @@ public class SecuredUser implements UserDetails {
     private final boolean accountNonLocked;
     private final boolean credentialsNonExpired;
     private final boolean enabled;
-    private InvoiceFilter filter;
+    private InvoiceFilter invoiceFilter;
+    private BookingFilter bookingFilter;
     private Integer userId;
     private Integer powerLevel;
 
@@ -137,12 +139,20 @@ public class SecuredUser implements UserDetails {
     }
 
 
-    public InvoiceFilter getFilter() {
-        return filter;
+    public InvoiceFilter getInvoiceFilter() {
+        return invoiceFilter;
     }
 
-    public void setFilter(InvoiceFilter filter) {
-        this.filter = filter;
+    public void setInvoiceFilter(InvoiceFilter invoiceFilter) {
+        this.invoiceFilter = invoiceFilter;
+    }
+
+    public BookingFilter getBookingFilter() {
+        return bookingFilter;
+    }
+
+    public void setBookingFilter(BookingFilter bookingFilter) {
+        this.bookingFilter = bookingFilter;
     }
 
     public Integer getPowerLevel() {

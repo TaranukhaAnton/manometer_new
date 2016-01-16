@@ -8,10 +8,14 @@
 <div id="tabs" class="tabs">
     <!-- Это сами вкладки -->
     <ul class="tabNavigation">
+        <li><a class="" href="#smart">Смарт</a></li>
         <li><a class="" href="#co">Цифровые</a></li>
         <li><a class="" href="#ao">Аналоговые</a></li>
         <li><a class="" href="#op">Однопредельные</a></li>
     </ul>
+    <div id="smart">
+        <jsp:include page="oneOptionPage.jsp?type=3"/>
+    </div>
     <div id="co">
         <jsp:include page="oneOptionPage.jsp?type=0"/>
     </div>

@@ -4,6 +4,7 @@ package ua.com.manometer.util;
 import org.apache.commons.lang.StringUtils;
 import org.hibernate.Hibernate;
 import org.hibernate.HibernateException;
+import org.hibernate.engine.spi.SessionImplementor;
 import org.hibernate.usertype.UserType;
 
 import java.io.Serializable;
@@ -32,7 +33,7 @@ public class IntegerListCustomType implements UserType {
 
 
     public boolean equals(Object x, Object y) throws HibernateException {
-        return ((List)x).equals((List)y);
+        return ((List)x).equals((List) y);
     }
 
 
@@ -40,7 +41,8 @@ public class IntegerListCustomType implements UserType {
         return x.hashCode();
     }
 
-    public Object nullSafeGet(ResultSet rs, String[] names, Object owner) throws HibernateException, SQLException {
+
+    public Object nullSafeGet(ResultSet rs, String[] names, SessionImplementor sessionImplementor, Object o) throws HibernateException, SQLException {
         String value = rs.getString(names[0]);
         List<Integer> result = new LinkedList<Integer>();
         if (value == null) {
@@ -54,7 +56,7 @@ public class IntegerListCustomType implements UserType {
         }
     }
 
-    public void nullSafeSet(PreparedStatement st, Object value, int index) throws HibernateException, SQLException {
+    public void nullSafeSet(PreparedStatement st, Object value, int index, SessionImplementor sessionImplementor) throws HibernateException, SQLException {
         if (value == null) {
             st.setObject(index, null, Types.VARCHAR);
         } else {

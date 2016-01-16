@@ -1,6 +1,6 @@
 package ua.com.manometer.dao.invoice;
 import ua.com.manometer.model.invoice.Invoice;
-import ua.com.manometer.model.invoice.InvoiceFilter;
+import ua.com.manometer.model.invoice.filter.InvoiceFilter;
 
 import java.util.Date;
 import java.util.List;

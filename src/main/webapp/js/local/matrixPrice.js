@@ -11,10 +11,12 @@ $(function () {
     $("#tabs").tabs({
         select:function (event, ui) {
             if (ui.index == 0) {
-                firstTabSelected();
+                smartTabSelected();
             } else if (ui.index == 1) {
-                secondTabSelected();
+                firstTabSelected();
             } else if (ui.index == 2) {
+                secondTabSelected();
+            } else if (ui.index == 3) {
                 thirdTabSelected();
             }
         }
@@ -22,7 +24,35 @@ $(function () {
 
 
 });
+function smartTabSelected() {
+    document.getElementById("materials").innerHTML = '<fieldset> <legend> Материалы  </legend>' +
+        ' <input type="checkbox" name="mat" value="0"> &nbsp; - 01 <br/> ' +
+        ' <input type="checkbox" name="mat" value="1"> &nbsp; - 02 <br/>   ' +
+        ' <input type="checkbox" name="mat" value="2"> &nbsp; - 05 <br/>  ' +
+        ' <input type="checkbox" name="mat" value="3"> &nbsp; - 07 <br/>  ' +
+        ' <input type="checkbox" name="mat" value="4"> &nbsp; - 09 <br/>  ' +
+        ' <input type="checkbox" name="mat" value="5"> &nbsp; - 11 <br/>  ' +
+        ' <input type="checkbox" name="mat" value="6"> &nbsp; - 12 <br/> ' +
+        ' </fieldset>';
 
+    document.getElementById("ispolnenie").innerHTML = '<fieldset><legend>Исполнения</legend>' +
+        '<input type="checkbox" name="isp" value="0"> &nbsp; - общ <br/>' +
+        '<input type="checkbox" name="isp" value="1"> &nbsp; - Вн <br/>' +
+        '<input type="checkbox" name="isp" value="2"> &nbsp; - Ex <br/>' +
+        '<input type="checkbox" name="isp" value="3"> &nbsp; - AC <br/>' +
+        '<input type="checkbox" name="isp" value="4"> &nbsp; - K <br/> <br/><br/>' +
+        '</fieldset>';
+
+
+    document.getElementById("error").innerHTML = '<fieldset> <legend> Погрешность</legend> ' +
+        '<input type="checkbox" name="err" value="0"> &nbsp; - 0,05 <br/> ' +
+        '<input type="checkbox" name="err" value="1"> &nbsp; - 0,1 <br/> ' +
+        '<input type="checkbox" name="err" value="2"> &nbsp; - 0,15 <br/> ' +
+        '<input type="checkbox" name="err" value="3"> &nbsp; - 0,25 <br/>' +
+        '<input type="checkbox" name="err" value="4"> &nbsp; - 0,5 <br/> ' +
+        '<input type="checkbox" name="err" value="5"> &nbsp; - 1,0 <br/><br/><br/>' +
+        '</fieldset>';
+}
 function firstTabSelected() {
     document.getElementById("materials").innerHTML = '<fieldset> <legend> Материалы  </legend>' +
         ' <input type="checkbox" name="mat" value="0"> &nbsp; - 01 <br/> ' +
@@ -44,11 +74,11 @@ function firstTabSelected() {
 
 
     document.getElementById("error").innerHTML = '<fieldset> <legend> Погрешность</legend> ' +
-        '<input type="checkbox" name="err" value="0"> &nbsp; - 0,1 <br/> ' +
-        '<input type="checkbox" name="err" value="1"> &nbsp; - 0,15 <br/> ' +
-        '<input type="checkbox" name="err" value="2"> &nbsp; - 0,25 <br/>' +
-        '<input type="checkbox" name="err" value="3"> &nbsp; - 0,5 <br/> ' +
-        '<input type="checkbox" name="err" value="4"> &nbsp; - 1,0 <br/><br/><br/>' +
+        '<input type="checkbox" name="err" value="1"> &nbsp; - 0,1 <br/> ' +
+        '<input type="checkbox" name="err" value="2"> &nbsp; - 0,15 <br/> ' +
+        '<input type="checkbox" name="err" value="3"> &nbsp; - 0,25 <br/>' +
+        '<input type="checkbox" name="err" value="4"> &nbsp; - 0,5 <br/> ' +
+        '<input type="checkbox" name="err" value="5"> &nbsp; - 1,0 <br/><br/><br/>' +
         '</fieldset>';
 }
 function secondTabSelected() {
@@ -71,11 +101,11 @@ function secondTabSelected() {
 
 
     document.getElementById("error").innerHTML = '<fieldset> <legend> Погрешность</legend> ' +
-        '<input type="checkbox" name="err" value="0"> &nbsp; - 0,1 <br/> ' +
-        '<input type="checkbox" name="err" value="1"> &nbsp; - 0,15 <br/> ' +
-        '<input type="checkbox" name="err" value="2"> &nbsp; - 0,25 <br/>' +
-        '<input type="checkbox" name="err" value="3"> &nbsp; - 0,5 <br/> ' +
-        '<input type="checkbox" name="err" value="4"> &nbsp; - 1,0 <br/><br/><br/>' +
+        '<input type="checkbox" name="err" value="1"> &nbsp; - 0,1 <br/> ' +
+        '<input type="checkbox" name="err" value="2"> &nbsp; - 0,15 <br/> ' +
+        '<input type="checkbox" name="err" value="3"> &nbsp; - 0,25 <br/>' +
+        '<input type="checkbox" name="err" value="4"> &nbsp; - 0,5 <br/> ' +
+        '<input type="checkbox" name="err" value="5"> &nbsp; - 1,0 <br/><br/><br/>' +
         '</fieldset>';
 }
 function thirdTabSelected() {
@@ -93,9 +123,9 @@ function thirdTabSelected() {
 
 
     document.getElementById("error").innerHTML = '<fieldset> <legend> Погрешность</legend> ' +
-        '<input type="checkbox" name="err" value="2"> &nbsp; - 0,25 <br/>' +
-        '<input type="checkbox" name="err" value="3"> &nbsp; - 0,5 <br/> ' +
-        '<input type="checkbox" name="err" value="4"> &nbsp; - 1,0 <br/><br/><br/>' +
+        '<input type="checkbox" name="err" value="3"> &nbsp; - 0,25 <br/>' +
+        '<input type="checkbox" name="err" value="4"> &nbsp; - 0,5 <br/> ' +
+        '<input type="checkbox" name="err" value="5"> &nbsp; - 1,0 <br/><br/><br/>' +
         '</fieldset>';
 }
 
@@ -116,7 +146,7 @@ function parseResults(data) {
     $("#result_dialog").dialog('open');
 
     var MAT = ["01", "02", "05", "07", "09", "11", "12"];
-    var ERR = ["0.1", "0.15", "0.25", "0.5", "1"];
+    var ERR = ["0.05","0.1", "0.15", "0.25", "0.5", "1"];
     var ISP = ["общ.", "вн", "Ex", "AC", "К"];
     var CLIME = ["УХЛ3.1*", "У2*", "Т3*"];
     var txt = "     <table class=\"result\"   width=\"100%\"><tr>" +

@@ -18,7 +18,7 @@
         </c:if>
     </display:column>
     <display:column title="Нов" sortable="true" class="bool2"  >
-        <c:if test="${row.new}">
+        <c:if test="${row.actual}">
             <img src="../images/bullet_done.png" />
         </c:if>
     </display:column>

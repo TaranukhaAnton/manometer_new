@@ -1,15 +1,19 @@
 package ua.com.manometer.service.invoice;
 
-import ua.com.manometer.model.invoice.InvoiceFilter;
+import ua.com.manometer.model.invoice.filter.BookingFilter;
+import ua.com.manometer.model.invoice.filter.InvoiceFilter;
 
 import java.util.List;
 
 public interface InvoiceFilterService {
 
-	public void addInvoiceFilter(InvoiceFilter invoicefilter);
+    void addInvoiceFilter(InvoiceFilter invoicefilter);
 
-	public List<InvoiceFilter> listInvoiceFilter();
+    List<InvoiceFilter> listInvoiceFilter();
 
-	public void removeInvoiceFilter(Integer id);
+    void removeInvoiceFilter(Integer id);
 
+    InvoiceFilter getInvoiceFilter(Integer id);
+
+    void addBookingFilter(BookingFilter bookingFilter);
 }

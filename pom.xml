@@ -6,41 +6,32 @@
     <version>1.0.0</version>
     <packaging>war</packaging>
     <properties>
-        <org.springframework.version>3.1.0.RELEASE</org.springframework.version>
+
+        <springframework.version>4.0.6.RELEASE</springframework.version>
+        <!--<springframework.version>4.2.1</springframework.version>-->
+        <springsecurity.version>3.1.7.RELEASE</springsecurity.version>
+        <hibernate.version>4.3.6.Final</hibernate.version>
+
+
+
+        <!--<org.springframework.version>3.1.0.RELEASE</org.springframework.version>-->
         <tiles.version>2.2.2</tiles.version>
         <log4j.version>1.2.14</log4j.version>
         <aspectj.version>1.6.10</aspectj.version>
         <cglib.version>2.2</cglib.version>
-        <mysql.connector.version>5.1.16</mysql.connector.version>
+        <mysql.connector.version>5.1.31</mysql.connector.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
     </properties>
-    <distributionManagement>
-        <repository>
-            <id>spb-maven-repo</id>
-            <name>spb-maven-repo</name>
-            <url>file://C:\Users\anton\.m2</url>
-        </repository>
-    </distributionManagement>
-    <repositories>
-        <repository>
-            <id>jboss-public-repository-group</id>
-            <name>JBoss Public Maven Repository Group</name>
-            <url>https://repository.jboss.org/nexus/content/groups/public-jboss/</url>
-        </repository>
-        <repository>
-            <id>people.apache.snapshots</id>
-            <url>http://repository.apache.org/content/groups/snapshots-group/</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
+    <!--<distributionManagement>-->
+    <!--<repository>-->
+    <!--<id>spb-maven-repo</id>-->
+    <!--<name>spb-maven-repo</name>-->
+    <!--<url>file://C:\Users\anton\.m2</url>-->
+    <!--</repository>-->
+    <!--</distributionManagement>-->
 
-    </repositories>
     <pluginRepositories>
 
     </pluginRepositories>
@@ -65,19 +56,19 @@
                 </configuration>
             </plugin>
 
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>tomcat-maven-plugin</artifactId>
-                <version>1.1</version>
-                <configuration>
-                    <warFile>target\manometer.war</warFile>
-                    <url>http://192.168.0.50:8080/manager/html</url>
-                    <username>anton</username>
-                    <password>2405</password>
-                    <!--<server>mytomcat</server>-->
-                    <path>/manometer</path>
-                </configuration>
-            </plugin>
+            <!--<plugin>-->
+            <!--<groupId>org.codehaus.mojo</groupId>-->
+            <!--<artifactId>tomcat-maven-plugin</artifactId>-->
+            <!--<version>1.1</version>-->
+            <!--<configuration>-->
+            <!--<warFile>target\manometer.war</warFile>-->
+            <!--<url>http://192.168.0.50:8080/manager/html</url>-->
+            <!--<username>anton</username>-->
+            <!--<password>2405</password>-->
+            <!--&lt;!&ndash;<server>mytomcat</server>&ndash;&gt;-->
+            <!--<path>/manometer</path>-->
+            <!--</configuration>-->
+            <!--</plugin>-->
 
 
         </plugins>
@@ -102,22 +93,11 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
-            <version>3.6.3.Final</version>
-            <type>jar</type>
-            <scope>compile</scope>
-        </dependency>
-        <!-- Hibernate c3p0 connection pool -->
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-c3p0</artifactId>
-            <version>3.6.3.Final</version>
+            <version>${hibernate.version}</version>
         </dependency>
 
-        <!--<dependency>-->
-        <!--<groupId>mysql</groupId>-->
-        <!--<artifactId>mysql-connector-java</artifactId>-->
-        <!--<version>5.1.10</version>-->
-        <!--</dependency>-->
+
+
 
 
         <!--  MySQL Connector -->
@@ -154,20 +134,84 @@
 
 
         <!-- Spring dependencies -->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-            <version>${org.springframework.version}</version>
-            <type>jar</type>
-            <scope>compile</scope>
-        </dependency>
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
-            <version>${org.springframework.version}</version>
-            <type>jar</type>
-            <scope>compile</scope>
+            <version>${springframework.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${springframework.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>${springframework.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${springframework.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${springframework.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${springframework.version}</version>
+        </dependency>
+
+
+
+
+
+
+        <!-- Spring Security -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+            <version>${springsecurity.version}</version>
+
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>${springsecurity.version}</version>
+
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${springsecurity.version}</version>
+
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
+            <version>${springsecurity.version}</version>
+        </dependency>
+
+
+
+
+
+        <!--<dependency>-->
+            <!--<groupId>org.springframework</groupId>-->
+            <!--<artifactId>spring-webmvc</artifactId>-->
+            <!--<version>${org.springframework.version}</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework</groupId>-->
+            <!--<artifactId>spring-core</artifactId>-->
+            <!--<version>${org.springframework.version}</version>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
@@ -181,29 +225,29 @@
             <scope>provided</scope>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-tx</artifactId>
-            <version>${org.springframework.version}</version>
-            <type>jar</type>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-orm</artifactId>
-            <version>${org.springframework.version}</version>
-            <type>jar</type>
-            <scope>compile</scope>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.springframework</groupId>-->
+            <!--<artifactId>spring-tx</artifactId>-->
+            <!--<version>${org.springframework.version}</version>-->
+            <!--<type>jar</type>-->
+            <!--<scope>compile</scope>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework</groupId>-->
+            <!--<artifactId>spring-orm</artifactId>-->
+            <!--<version>${org.springframework.version}</version>-->
+            <!--<type>jar</type>-->
+            <!--<scope>compile</scope>-->
+        <!--</dependency>-->
 
 
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-aspects</artifactId>
-            <version>${org.springframework.version}</version>
-            <type>jar</type>
-            <scope>compile</scope>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.springframework</groupId>-->
+            <!--<artifactId>spring-aspects</artifactId>-->
+            <!--<version>${org.springframework.version}</version>-->
+            <!--<type>jar</type>-->
+            <!--<scope>compile</scope>-->
+        <!--</dependency>-->
 
         <!-- A seamless aspect-oriented extension to the Java programming language -->
         <dependency>
@@ -229,29 +273,7 @@
             <scope>compile</scope>
         </dependency>
 
-        <!-- Spring Security -->
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-core</artifactId>
-            <version>${org.springframework.version}</version>
-        </dependency>
 
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-web</artifactId>
-            <version>${org.springframework.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-config</artifactId>
-            <version>${org.springframework.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-taglibs</artifactId>
-            <version>${org.springframework.version}</version>
-        </dependency>
 
 
         <!-- web dependencies -->

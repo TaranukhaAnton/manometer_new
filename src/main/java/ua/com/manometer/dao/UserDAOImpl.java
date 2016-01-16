@@ -1,12 +1,15 @@
 package ua.com.manometer.dao;
 
+import org.hibernate.Hibernate;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.classic.Session;
+
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import ua.com.manometer.model.User;
 
+import java.io.File;
 import java.util.List;
 
 @Repository
@@ -43,6 +46,7 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public User findByLogin(String login) {
+
         return (User) sessionFactory.getCurrentSession().createCriteria(User.class).
                 add(Restrictions.eq("login", login)).uniqueResult();
     }

@@ -21,6 +21,7 @@
 
             <LI><A href="#">Таб. совм.</A>
                 <UL>
+                    <LI><A href="../compatibility/smart">Смарт</A></LI>
                     <LI><A href="../compatibility/co">ЦО</A></LI>
                     <LI><A href="../compatibility/op">ОП</A></LI>
                     <LI><A href="../compatibility/ao">АО</A></LI>

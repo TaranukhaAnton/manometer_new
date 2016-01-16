@@ -37,7 +37,10 @@
         <put-attribute name="body" value="/WEB-INF/pages/addProduction/addListProductionExt.jsp"/>
     </definition>
 
-
+    <definition name="addSmart" extends="baseLayout">
+        <put-attribute name="title" value="Добавить датчик СМАРТ"/>
+        <put-attribute name="body" value="/WEB-INF/pages/addProduction/addSmartForm.jsp"/>
+    </definition>
     <definition name="addCo" extends="baseLayout">
         <put-attribute name="title" value="Добавить датчик ЦО"/>
         <put-attribute name="body" value="/WEB-INF/pages/addProduction/addCoForm.jsp"/>
@@ -124,6 +127,11 @@
     <definition name="redactOp" extends="baseLayout">
         <put-attribute name="title" value="Таблица совместимости ОП"/>
         <put-attribute name="body" value="/WEB-INF/pages/compatibility/redactOpCompatibility.jsp"/>
+    </definition>
+
+    <definition name="redactSmart" extends="baseLayout">
+        <put-attribute name="title" value="Таблица совместимости ЦО"/>
+        <put-attribute name="body" value="/WEB-INF/pages/compatibility/redactSmartCompatibility.jsp"/>
     </definition>
 
 

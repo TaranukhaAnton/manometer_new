@@ -85,21 +85,22 @@ $(function () {
 
 
 function view(type, isp, paramLab, param, price, cost) {
-    var myArray = new Array();
-    myArray[0] = "общ";
-    myArray[1] = "Вн.";
-    myArray[2] = "Ex";
-    myArray[3] = "Ac";
-    myArray[4] = "K";
+    var ispArray = new Array();
+    ispArray[0] = "общ";
+    ispArray[1] = "Вн.";
+    ispArray[2] = "Ex";
+    ispArray[3] = "Ac";
+    ispArray[4] = "K";
 
     var typeArr = new Array();
     typeArr[0] = "ЦО";
     typeArr[1] = "АО";
     typeArr[2] = "ОП";
+    typeArr[3] = "Смарт";
 
 
     $("#TypeLab").text("Датчик давления " + typeArr[type]);
-    $("#IspLab").text("Исполнение " + myArray[isp]);
+    $("#IspLab").text("Исполнение " + ispArray[isp]);
     $("#ParamLab").text("Редактируемая опция " + paramLab);
 
     $("#param").val(param);

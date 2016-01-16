@@ -19,12 +19,12 @@ import org.springframework.web.bind.annotation.*;
 import ua.com.manometer.model.Customer;
 import ua.com.manometer.model.SecuredUser;
 import ua.com.manometer.model.Supplier;
+import ua.com.manometer.model.User;
 import ua.com.manometer.model.address.City;
 import ua.com.manometer.model.invoice.*;
-import ua.com.manometer.service.CurrencyService;
-import ua.com.manometer.service.CustomerService;
-import ua.com.manometer.service.SupplierService;
-import ua.com.manometer.service.UserService;
+import ua.com.manometer.model.invoice.filter.BookingFilter;
+import ua.com.manometer.model.invoice.filter.InvoiceFilter;
+import ua.com.manometer.service.*;
 import ua.com.manometer.service.address.CityService;
 import ua.com.manometer.service.invoice.BookingService;
 import ua.com.manometer.service.invoice.InvoiceItemService;
@@ -73,29 +73,29 @@ public class InvoiceController {
 
     @RequestMapping("/")
     public String populateInvoices(@CookieValue(required = false) String invoice_filter, Map<String, Object> map) {
-        InvoiceFilter filter = null;
-        if (StringUtils.isNotBlank(invoice_filter)) {
-            try {
-                ObjectMapper objectMapper = new ObjectMapper();
-                objectMapper.setDateFormat(new SimpleDateFormat("dd.MM.yyyy"));
-                filter = objectMapper.readValue(invoice_filter, InvoiceFilter.class);
-
-            } catch (IOException e) {
-                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-                LOGGER.error(e);
-            }
-
-        }
+//        InvoiceFilter filter = null;
+//        if (StringUtils.isNotBlank(invoice_filter)) {
+//            try {
+//                ObjectMapper objectMapper = new ObjectMapper();
+//                objectMapper.setDateFormat(new SimpleDateFormat("dd.MM.yyyy"));
+//                filter = objectMapper.readValue(invoice_filter, InvoiceFilter.class);
+//
+//            } catch (IOException e) {
+//                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+//                LOGGER.error(e);
+//            }
+//
+//        }
         SecuredUser securedUser = (SecuredUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-//        InvoiceFilter filter = securedUser.getFilter();
+        InvoiceFilter filter = securedUser.getInvoiceFilter();
 
         map.put("userId", securedUser.getUserId());
-        if (filter != null) {
+//        if (filter != null) {
             map.put("listInvoices", invoiceService.listFilteredInvoice(filter));
-        } else {
-            map.put("listInvoices", invoiceService.listInvoice());
-
-        }
+//        } else {
+//            map.put("listInvoices", invoiceService.listInvoice());
+//
+//        }
         map.put("currencies", currencyService.listCurrency());
         map.put("userList", userService.listUser());
         map.put("userLevel", securedUser.getPowerLevel());
