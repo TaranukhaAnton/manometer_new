@@ -331,7 +331,7 @@
 <tr>
     <td class="tdLabel">Новое предприятие</td>
     <td>
-        <form:checkbox path="New" size="40"/>
+        <form:checkbox path="actual" size="40"/>
     </td>
 </tr>
 <tr>

@@ -2,8 +2,12 @@ package ua.com.manometer.model.invoice.filter;
 
 
 //import org.codehaus.jackson.map.annotate.JsonSerialize;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.codehaus.jackson.annotate.JsonAutoDetect;
+import org.codehaus.jackson.map.annotate.JsonSerialize;
 import org.hibernate.annotations.Type;
 import org.springframework.format.annotation.DateTimeFormat;
+import ua.com.manometer.util.CustomDateSerializer;
 //import ua.com.manometer.util.CustomDateSerializer;
 
 import javax.persistence.*;
@@ -13,6 +17,7 @@ import java.util.*;
 
 @Entity
 @Table(name="invoice_filter")
+@JsonAutoDetect
 public class InvoiceFilter  implements Serializable {
     @Id
     @Column(name = "id")
@@ -28,9 +33,15 @@ public class InvoiceFilter  implements Serializable {
     @Transient
     String employer;
 
-//    @DateTimeFormat(pattern="dd.MM.yyyy")
+    @DateTimeFormat(pattern="dd.MM.yyyy")
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd.MM.yyyy", timezone="EET")
+//    @JsonSerialize(using = CustomDateSerializer.class)
     Date f2From;
-//    @DateTimeFormat(pattern="dd.MM.yyyy")
+
+    @DateTimeFormat(pattern="dd.MM.yyyy")
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd.MM.yyyy", timezone="EET")
+
+//    @JsonSerialize(using = CustomDateSerializer.class)
     Date f2To;
 
     @Type(type = "ua.com.manometer.util.IntegerListCustomType")
@@ -136,7 +147,7 @@ public class InvoiceFilter  implements Serializable {
     }
 
 
-//    @JsonSerialize(using = CustomDateSerializer.class)
+ //   @JsonSerialize(using = CustomDateSerializer.class)
     public Date getF2From() {
         return f2From;
     }
@@ -145,7 +156,7 @@ public class InvoiceFilter  implements Serializable {
         this.f2From = f2From;
     }
 
-//    @JsonSerialize(using = CustomDateSerializer.class)
+ //   @JsonSerialize(using = CustomDateSerializer.class)
     public Date getF2To() {
         return f2To;
     }
