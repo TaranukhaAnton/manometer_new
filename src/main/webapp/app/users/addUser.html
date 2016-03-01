@@ -1,0 +1,86 @@
+<div class="container">
+    <div class="row">
+        <form role="form">
+            <div class="col-lg-6">
+                <div class="well well-sm"><strong><span class="glyphicon glyphicon-asterisk"></span>Обязательные поля</strong></div>
+
+                <div class="form-group">
+                    <label for="InputName">Имя</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="InputName" id="InputName" placeholder="Имя" required>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="InputSurname">Отчество</label>
+                    <div class="input-group">
+                        <input type="email" class="form-control" id="InputSurname" name="InputSurname" placeholder="Отчество" required>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="InputLastName">Фамилия</label>
+                    <div class="input-group">
+                        <input type="email" class="form-control" id="InputLastName" name="InputLastName" placeholder="Фамилия" required>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="fioUkr">ФИО укр</label>
+                    <div class="input-group">
+                        <input type="email" class="form-control" id="fioUkr" name="fioUkr" placeholder="ФИО укр" required>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="position">Должность</label>
+                    <div class="input-group">
+                        <input type="email" class="form-control" id="position" name="position" placeholder="Должность" required>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+
+                <!--<div class="form-group">-->
+                    <!--<label for="receptionOnWorkDate">Дата приёма</label>-->
+                    <div class="input-group date">
+                        <input type="email" class="form-control" id="receptionOnWorkDate" name="receptionOnWorkDate" placeholder="Дата приёма" required>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                <!--</div>-->
+
+
+                <div class="input-group date">
+                    <input type="text" class="form-control">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                </div>
+
+
+
+
+                <div class="form-group">
+                    <label for="InputMessage">Enter Message</label>
+                    <div class="input-group">
+                        <textarea name="InputMessage" id="InputMessage" class="form-control" rows="5" required></textarea>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+                <input type="submit" name="submit" id="submit" value="Сохранить" class="btn btn-info pull-right">
+            </div>
+        </form>
+        <div class="col-lg-5 col-md-push-1">
+            <div class="col-md-12">
+                <div class="alert alert-success">
+                    <strong><span class="glyphicon glyphicon-ok"></span> Success! Message sent.</strong>
+                </div>
+                <div class="alert alert-danger">
+                    <span class="glyphicon glyphicon-remove"></span><strong> Error! Please check all page inputs.</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

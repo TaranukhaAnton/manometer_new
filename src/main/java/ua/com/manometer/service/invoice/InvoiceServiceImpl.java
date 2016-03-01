@@ -22,7 +22,7 @@ public class InvoiceServiceImpl implements InvoiceService {
     @Override
     @Transactional
     public Invoice getInvoice(Integer id) {
-        return invoiceDAO.getInvoice(id);  //To change body of implemented methods use File | Settings | File Templates.
+        return invoiceDAO.getInvoice(id);
     }
 
     @Override
@@ -52,6 +52,10 @@ public class InvoiceServiceImpl implements InvoiceService {
     @Transactional
     public void updateInvoice(Integer id) {
         Invoice invoice = invoiceDAO.getInvoice(id);
+        if (invoice == null) {
+            System.err.println("InvoiceServiceImpl.updateInvoice Счет [" + id + "] не найден");
+            return;
+        }
 
         try {
             updateCounters(invoice);

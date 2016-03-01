@@ -1,5 +1,6 @@
 package ua.com.manometer.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.DateTimeFormat;
 import ua.com.manometer.model.invoice.filter.BookingFilter;
 import ua.com.manometer.model.invoice.filter.InvoiceFilter;
@@ -24,8 +25,10 @@ public class User {
     private String lastName; // фамилия
     private String position; // должность
     @DateTimeFormat(pattern="dd.MM.yyyy")
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd.MM.yyyy", timezone="EET")
     private Date receptionOnWorkDate; // дата приёма на работу
     @DateTimeFormat(pattern="dd.MM.yyyy")
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd.MM.yyyy", timezone="EET")
     private Date dischargingDate; // дата увольнения
     private String tel;// телефон
     private String telMob; // телефон мобильный

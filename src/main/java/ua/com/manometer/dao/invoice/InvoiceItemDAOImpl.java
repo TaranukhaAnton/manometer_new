@@ -1,4 +1,5 @@
 package ua.com.manometer.dao.invoice;
+import org.hibernate.Session;
 import ua.com.manometer.model.invoice.Invoice;
 import ua.com.manometer.model.invoice.InvoiceItem;
 
@@ -22,14 +23,16 @@ public class InvoiceItemDAOImpl implements InvoiceItemDAO {
     @SuppressWarnings("unchecked")
     @Override
     public List<InvoiceItem> listInvoiceItem() {
+        javassist.util.proxy.Proxy xx;
         return sessionFactory.getCurrentSession().createQuery("from InvoiceItem").list();
     }
 
     @Override
     public void removeInvoiceItem(Integer id) {
-        InvoiceItem invoiceitem = (InvoiceItem) sessionFactory.getCurrentSession().load(InvoiceItem.class, id);
+        Session currentSession = sessionFactory.getCurrentSession();
+        InvoiceItem invoiceitem = (InvoiceItem)   currentSession.load(InvoiceItem.class, id);
         if (invoiceitem != null) {
-            sessionFactory.getCurrentSession().delete(invoiceitem);
+            currentSession.delete(invoiceitem);
         }
     }
 

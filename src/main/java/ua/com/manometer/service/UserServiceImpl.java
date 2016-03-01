@@ -34,6 +34,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
+    public List<User> listUser(Integer page, Integer count) {
+        return userDAO.listUser(page, count);
+    }
+
+    @Override
+    @Transactional
     public void removeUser(Integer id) {
         userDAO.removeUser(id);
     }
@@ -43,5 +49,13 @@ public class UserServiceImpl implements UserService {
     public User findByLogin(String login) {
         return userDAO.findByLogin(login);
     }
+
+    @Override
+    @Transactional
+
+    public Long getUsersCount() {
+        return userDAO.getUsersCount();
+    }
+
 
 }

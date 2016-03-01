@@ -142,11 +142,13 @@ public class InvoiceDAOImpl implements InvoiceDAO {
     @Override
     public Invoice getInvoice(Integer id) {
         Invoice invoice = (Invoice) sessionFactory.getCurrentSession().get(Invoice.class, id);
-        Hibernate.initialize(invoice.getPayments());
-        Hibernate.initialize(invoice.getBooking());
-        Hibernate.initialize(invoice.getInvoiceItems());
-        Hibernate.initialize(invoice.getPayments());
-        Hibernate.initialize(invoice.getShipments());
+        if (invoice != null) {
+            Hibernate.initialize(invoice.getPayments());
+            Hibernate.initialize(invoice.getBooking());
+            Hibernate.initialize(invoice.getInvoiceItems());
+            Hibernate.initialize(invoice.getPayments());
+            Hibernate.initialize(invoice.getShipments());
+        }
         return invoice;
     }
 

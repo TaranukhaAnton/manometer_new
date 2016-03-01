@@ -1,0 +1,24 @@
+customerList
+
+
+<div loading-container="tableParams.settings().$loading">
+    <table ng-table="tableParams" class="table table-condensed table-bordered table-striped">
+
+        <tr ng-repeat="issue in $data">
+            <td data-title="'#'">
+                {{issue.id}}
+            </td>
+            <td data-title="'Theme'">{{issue.name}}</td>
+            <!--<td data-title="'Opened by'">-->
+                <!--<a target="_blank" ng-href="{{issue.user.url}}">-->
+                    <!--<nobr><img width="16" height="16" ng-src="{{issue.user.avatar_url}}"/> {{issue.user.login}}-->
+                    <!--</nobr>-->
+                <!--</a>-->
+            <!--</td>-->
+            <td data-title="'Updated'">
+                <nobr>{{issue.updated_at | date:'medium'}}</nobr>
+            </td>
+        </tr>
+    </table>
+</div>
+

@@ -113,23 +113,23 @@ public class InvoiceController {
         map.put("supplierList", supplierService.listSupplier());
 
 
-        final List<Invoice> invoices = invoiceService.listInvoice();
-//        final int index = invoices.indexOf(invoice);
-        final int index = getIndex(invoices, invoice);
-        if (index == 0) {
-            invoice.setPrev(null);
-            if (invoices.size() > 1) {
-                invoice.setNext(invoices.get(index + 1).getId());
-            } else {
-                invoice.setNext(null);
-            }
-        } else if (index == invoices.size() - 1) {
-            invoice.setNext(null);
-            invoice.setPrev(invoices.get(index - 1).getId());
-        } else {
-            invoice.setPrev(invoices.get(index - 1).getId());
-            invoice.setNext(invoices.get(index + 1).getId());
-        }
+//        final List<Invoice> invoices = invoiceService.listInvoice();
+////        final int index = invoices.indexOf(invoice);
+//        final int index = getIndex(invoices, invoice);
+//        if (index == 0) {
+//            invoice.setPrev(null);
+//            if (invoices.size() > 1) {
+//                invoice.setNext(invoices.get(index + 1).getId());
+//            } else {
+//                invoice.setNext(null);
+//            }
+//        } else if (index == invoices.size() - 1) {
+//            invoice.setNext(null);
+//            invoice.setPrev(invoices.get(index - 1).getId());
+//        } else {
+//            invoice.setPrev(invoices.get(index - 1).getId());
+//            invoice.setNext(invoices.get(index + 1).getId());
+//        }
 
 
         return "editInvoice";

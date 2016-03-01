@@ -1,9 +1,11 @@
 package ua.com.manometer.dao;
 
 import org.hibernate.Hibernate;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -30,6 +32,15 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
+    public List<User> listUser(Integer page, Integer count) {
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("From User");
+        query.setFirstResult((page - 1) * count);
+        query.setMaxResults(count);
+        return query.list();
+    }
+
+    @Override
     public void removeUser(Integer id) {
         Session currentSession = sessionFactory.getCurrentSession();
         User user = (User) currentSession.load(User.class, id);
@@ -51,5 +62,8 @@ public class UserDAOImpl implements UserDAO {
                 add(Restrictions.eq("login", login)).uniqueResult();
     }
 
-
+    @Override
+    public Long getUsersCount() {
+        return (Long) sessionFactory.getCurrentSession().createCriteria(User.class).setProjection(Projections.rowCount()).uniqueResult();
+    }
 }

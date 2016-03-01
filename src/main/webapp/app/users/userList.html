@@ -1,0 +1,27 @@
+<div loading-container="tableParams.settings().$loading">
+    <table ng-table="tableParams" class="table table-condensed table-bordered table-striped">
+        <tr ng-repeat="issue in $data">
+            <td data-title="'Id'" >  {{issue.id}}    </td>
+            <td data-title="'Фамилия'">{{issue.lastName}}</td>
+            <td data-title="'Имя'">{{issue.name}}</td>
+            <td data-title="'Отчество'">{{issue.patronymic}}</td>
+            <td data-title="'Должность'">{{issue.position}}</td>
+            <td data-title="'Дата пр.'">{{issue.receptionOnWorkDate}}</td>
+            <td data-title="'Дата ув.'">{{issue.dischargingDate}}</td>
+            <td data-title="'Телефон'">{{issue.tel}}</td>
+            <td data-title="'Мобильный'">{{issue.telMob}}</td>
+            <td data-title="'Ур. полномочий'">{{issue.powersLevel}}</td>
+            <td data-title="'Логин'">{{issue.login}}</td>
+            <!--<td data-title="'Opened by'">-->
+                <!--<a target="_blank" ng-href="{{issue.user.url}}">-->
+                    <!--<nobr><img width="16" height="16" ng-src="{{issue.user.avatar_url}}"/> {{issue.user.login}}-->
+                    <!--</nobr>-->
+                <!--</a>-->
+            <!--</td>-->
+            <!--<td data-title="'Updated'">-->
+                <!--<nobr>{{issue.updated_at | date:'medium'}}</nobr>-->
+            <!--</td>-->
+        </tr>
+    </table>
+</div>
+
