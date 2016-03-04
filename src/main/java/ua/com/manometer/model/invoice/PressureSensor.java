@@ -39,9 +39,7 @@ public class PressureSensor extends InvoiceItem {
     private Integer outType;
     private Integer kmch;
     private Integer du;
-    @Column(nullable = false, length = 1)
-    @Type(type = "yes_no")
-    private boolean R;
+
     @Column(nullable = false, length = 1)
     @Type(type = "yes_no")
     private boolean I;
@@ -105,7 +103,7 @@ public class PressureSensor extends InvoiceItem {
         clone.setOutType(outType);
         clone.setKmch(kmch);
         clone.setDu(du);
-        clone.setR(R);
+        clone.setConnector(connector);
         clone.setI(I);
         clone.setPI(PI);
         clone.setHIM(HIM);
@@ -159,14 +157,6 @@ public class PressureSensor extends InvoiceItem {
 
     public void setHIM(boolean HIM) {
         this.HIM = HIM;
-    }
-
-    public boolean isR() {
-        return R;
-    }
-
-    public void setR(boolean r) {
-        R = r;
     }
 
     public Integer getDu() {

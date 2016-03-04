@@ -199,7 +199,7 @@ public class InvoiceItemController {
         pressureSensor.setOutType(new Integer(request.getParameter("out")));
         pressureSensor.setKmch(StringUtils.isBlank(request.getParameter("kmch")) ? 0 : new Integer(request.getParameter("kmch")));
         pressureSensor.setDu(StringUtils.isBlank(request.getParameter("du")) ? 0 : new Integer(request.getParameter("du")));
-        pressureSensor.setR(request.getParameter("r") != null);
+
         pressureSensor.setI(request.getParameter("i") != null);
         pressureSensor.setHIM(request.getParameter("him") != null);
         pressureSensor.setPI(request.getParameter("pi") != null);
