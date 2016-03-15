@@ -49,5 +49,18 @@ public class SupplierServiceImpl implements SupplierService {
         return  supplierDAO.getDefSupplier();
     }
 
+    @Override
+    @Transactional
+    public List<Supplier> listSupplier(Integer page, Integer count) {
+        return supplierDAO.listSupplier(page, count);
+
+    }
+
+    @Override
+    @Transactional
+    public Long getSupplierCount() {
+        return supplierDAO.getSupplierCount();
+    }
+
 
 }

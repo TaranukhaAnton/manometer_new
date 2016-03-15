@@ -6,14 +6,17 @@ import java.util.List;
 
 public interface SupplierService {
 
-	public void addSupplier(Supplier supplier);
+	 void addSupplier(Supplier supplier);
 
-	public List<Supplier> listSupplier();
+	 List<Supplier> listSupplier();
 
-	public void removeSupplier(Integer id);
+	 void removeSupplier(Integer id);
 
-    public Supplier getSupplier(Integer id);
-    public Supplier getDefSupplier();
+    Supplier getSupplier(Integer id);
+    Supplier getDefSupplier();
 
 
+	List<Supplier> listSupplier(Integer page, Integer count);
+
+	Long getSupplierCount();
 }

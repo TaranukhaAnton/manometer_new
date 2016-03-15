@@ -52,7 +52,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-
     public Long getUsersCount() {
         return userDAO.getUsersCount();
     }

@@ -1,6 +1,11 @@
 package ua.com.manometer.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+
+//import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 import org.springframework.format.annotation.DateTimeFormat;
 import ua.com.manometer.model.invoice.filter.BookingFilter;
 import ua.com.manometer.model.invoice.filter.InvoiceFilter;
@@ -9,7 +14,8 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name="user")
+@Table(name = "user")
+@JsonIgnoreProperties({"invoiceFilter", "bookingFilter"})
 public class User {
     public static String[] POWER_LEVELS = {"пользователь", "менеджер", "экономист", "администратор"};
     public static Integer LEVEL_USER = 1;
@@ -24,11 +30,11 @@ public class User {
     private String patronymic; // отчество
     private String lastName; // фамилия
     private String position; // должность
-    @DateTimeFormat(pattern="dd.MM.yyyy")
-    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd.MM.yyyy", timezone="EET")
+    @DateTimeFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd.MM.yyyy", timezone = "EET")
     private Date receptionOnWorkDate; // дата приёма на работу
-    @DateTimeFormat(pattern="dd.MM.yyyy")
-    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd.MM.yyyy", timezone="EET")
+    @DateTimeFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd.MM.yyyy", timezone = "EET")
     private Date dischargingDate; // дата увольнения
     private String tel;// телефон
     private String telMob; // телефон мобильный
@@ -36,11 +42,14 @@ public class User {
     private String login; // логин
     private String pass;// пароль
 
-    @OneToOne(cascade = CascadeType.ALL)
+
+    @OneToOne(optional = false,fetch = FetchType.LAZY)
+//    @Fetch(FetchMode.JOIN)
     @PrimaryKeyJoinColumn
     private InvoiceFilter invoiceFilter;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(optional = false,fetch = FetchType.LAZY)
+//    @Fetch(FetchMode.JOIN)
     @PrimaryKeyJoinColumn
     private BookingFilter bookingFilter;
 
@@ -225,8 +234,8 @@ public class User {
         return 4 == powersLevel;
     }
 
-    public String toString(){
-        return  login;
+    public String toString() {
+        return login;
     }
 }
 

@@ -3,8 +3,10 @@ package ua.com.manometer.controller.json;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import ua.com.manometer.model.User;
 import ua.com.manometer.service.UserService;
 
@@ -18,17 +20,6 @@ public class UserControllerJson {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public
-    @ResponseBody
-    List getUsers() {
-//        Map<String, Object> result = new HashMap<String, Object>();
-//        result.put("data",userService.listUser().subList(0,10));
-//        result.put("totalCount",userService.getUsersCount());
-        return userService.listUser().subList(0, 10);
-    }
-
-
     @RequestMapping(value = "/map", method = RequestMethod.GET, params = {"count", "page"})
     public
     @ResponseBody
@@ -40,22 +31,14 @@ public class UserControllerJson {
     }
 
 
-//    return (Number) session.createCriteria("Book").setProjection(Projections.rowCount()).uniqueResult();
-
-//    @RequestMapping("/edit")
-//    public String setupForm(@RequestParam(value = "id", required = false) Integer id, ModelMap model) {
-//        if (id != null) {
-//            User user = userService.getUser(id);
-//            model.put("user", user);
-//        } else {
-//            model.put("user", new User());
-//        }
-//        return "editUser";
-//    }
+    @RequestMapping(value = "/edit", method = RequestMethod.GET, params = {"id"})
+    public @ResponseBody User setupForm(@RequestParam(value = "id", required = false) Integer id) {
+        return userService.getUser(id);
+    }
 //
 //
 //    @RequestMapping("/add")
-//    public String processSubmit(@ModelAttribute("user") User user,  SessionStatus status) {
+//    public String processSubmit(@ModelAttribute("user") User user) {
 //        boolean hasError = false;
 //
 //        if (hasError) {

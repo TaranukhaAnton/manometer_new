@@ -1,9 +1,6 @@
 package ua.com.manometer.dao;
 
-import org.hibernate.Hibernate;
-import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
+import org.hibernate.*;
 
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
@@ -34,10 +31,11 @@ public class UserDAOImpl implements UserDAO {
     @Override
     public List<User> listUser(Integer page, Integer count) {
         Session session = sessionFactory.getCurrentSession();
-        Query query = session.createQuery("From User");
-        query.setFirstResult((page - 1) * count);
-        query.setMaxResults(count);
-        return query.list();
+        Criteria criteria = session.createCriteria(User.class);
+        criteria.setMaxResults(count);
+        criteria.setFirstResult((page - 1) * count);
+        List list = criteria.list();
+        return list;
     }
 
     @Override
