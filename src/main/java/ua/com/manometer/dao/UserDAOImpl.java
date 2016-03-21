@@ -25,7 +25,12 @@ public class UserDAOImpl implements UserDAO {
     @SuppressWarnings("unchecked")
     @Override
     public List<User> listUser() {
-        return sessionFactory.getCurrentSession().createQuery("from User").list();
+        List<User> list = sessionFactory.getCurrentSession().createQuery("from User").list();
+        for (User user : list) {
+            Hibernate.initialize(user.getBookingFilter());
+            Hibernate.initialize(user.getInvoiceFilter());
+        }
+        return list;
     }
 
     @Override
@@ -50,14 +55,19 @@ public class UserDAOImpl implements UserDAO {
     @Override
     public User getUser(Integer id) {
         User user = (User) sessionFactory.getCurrentSession().get(User.class, id);
+        Hibernate.initialize(user.getBookingFilter());
+        Hibernate.initialize(user.getInvoiceFilter());
         return user;
     }
 
     @Override
     public User findByLogin(String login) {
 
-        return (User) sessionFactory.getCurrentSession().createCriteria(User.class).
+        User user = (User) sessionFactory.getCurrentSession().createCriteria(User.class).
                 add(Restrictions.eq("login", login)).uniqueResult();
+        Hibernate.initialize(user.getBookingFilter());
+        Hibernate.initialize(user.getInvoiceFilter());
+        return user;
     }
 
     @Override
